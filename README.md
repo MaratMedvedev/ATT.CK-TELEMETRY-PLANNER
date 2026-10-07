@@ -104,10 +104,6 @@ The browser opens the local Streamlit app. No internet connection is required fo
 
 This is an MVP planning tool. It does not parse real logs, replace a SIEM, or generate Sigma rules. The coverage score and source costs are project-specific experimental assumptions.
 
-## Knowledge-base note
-
-The included YAML is a defensible demo seed for six ATT&CK techniques and five telemetry sources. Before submitting the final report, re-check every role/evidence mapping against the exact ATT&CK release you cite and keep the version/date in the report.
-
 ## ATT&CK telemetry scraper
 
 The project also includes a STIX-based ATT&CK scraper. It downloads a pinned Enterprise ATT&CK release, extracts the chain `Technique -> Detection Strategy -> Analytic -> Data Component -> Log Source`, maps known log-source names to the planner's normalized telemetry IDs, and writes a reproducible report. The scraper uses official MITRE ATT&CK STIX data rather than brittle HTML parsing.

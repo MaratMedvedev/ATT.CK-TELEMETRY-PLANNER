@@ -6,5 +6,5 @@ experiments/out/
 *.pyc
 
 # Keep downloaded/generated ATT&CK bundles out of git; generated YAML/report can be committed.
-data/generated/*.json
-data/generated/enterprise-attack-*.json
+# data/generated/*.json
+# data/generated/enterprise-attack-*.json

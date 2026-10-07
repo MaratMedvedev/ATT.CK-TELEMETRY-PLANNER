@@ -1,0 +1,4841 @@
+{
+  "attack_version": "19.2",
+  "domain": "enterprise-attack",
+  "source_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack-19.2.json",
+  "record_count": 4160,
+  "technique_count": 652,
+  "generated_at": "2026-10-06T20:11:25.312690+00:00",
+  "role_basis": "attack_analytics",
+  "note": "Primary means directly referenced by an ATT&CK analytic; supporting is not inferred by this scraper.",
+  "unknown_log_sources": [
+    {
+      "suggested_id": "attck_nsm_flow",
+      "name": "NSM:Flow",
+      "raw_log_source": "NSM:Flow",
+      "examples": [
+        {
+          "technique": "T1001",
+          "analytic": "AN0144",
+          "channel": "HTTP"
+        },
+        {
+          "technique": "T1001.001",
+          "analytic": "AN0030",
+          "channel": "TCP/UDP"
+        },
+        {
+          "technique": "T1001.001",
+          "analytic": "AN0031",
+          "channel": "TCP session tracking"
+        },
+        {
+          "technique": "T1001.001",
+          "analytic": "AN0032",
+          "channel": "session behavior"
+        },
+        {
+          "technique": "T1001.002",
+          "analytic": "AN0651",
+          "channel": "Session Transfer Content"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_auditd_syscall",
+      "name": "auditd:SYSCALL",
+      "raw_log_source": "auditd:SYSCALL",
+      "examples": [
+        {
+          "technique": "T1001",
+          "analytic": "AN0145",
+          "channel": "connect"
+        },
+        {
+          "technique": "T1001.001",
+          "analytic": "AN0031",
+          "channel": "execve network tools"
+        },
+        {
+          "technique": "T1001.002",
+          "analytic": "AN0652",
+          "channel": "execve"
+        },
+        {
+          "technique": "T1001.003",
+          "analytic": "AN1295",
+          "channel": "execve"
+        },
+        {
+          "technique": "T1003",
+          "analytic": "AN0649",
+          "channel": "execve"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_macos_unifiedlog",
+      "name": "macos:unifiedlog",
+      "raw_log_source": "macos:unifiedlog",
+      "examples": [
+        {
+          "technique": "T1001",
+          "analytic": "AN0146",
+          "channel": "network flow"
+        },
+        {
+          "technique": "T1001",
+          "analytic": "AN0146",
+          "channel": "process"
+        },
+        {
+          "technique": "T1001.001",
+          "analytic": "AN0032",
+          "channel": "connection attempts"
+        },
+        {
+          "technique": "T1001.002",
+          "analytic": "AN0653",
+          "channel": "File creation"
+        },
+        {
+          "technique": "T1001.003",
+          "analytic": "AN1296",
+          "channel": "Outbound Traffic"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_macos_osquery",
+      "name": "macos:osquery",
+      "raw_log_source": "macos:osquery",
+      "examples": [
+        {
+          "technique": "T1001.001",
+          "analytic": "AN0032",
+          "channel": "process_events"
+        },
+        {
+          "technique": "T1001.002",
+          "analytic": "AN0653",
+          "channel": "process_events"
+        },
+        {
+          "technique": "T1001.003",
+          "analytic": "AN1296",
+          "channel": "Process Execution + Hash"
+        },
+        {
+          "technique": "T1003",
+          "analytic": "AN0650",
+          "channel": "Invocation of osascript or dylib injection"
+        },
+        {
+          "technique": "T1007",
+          "analytic": "AN1327",
+          "channel": "process_events"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_esxi_hostd",
+      "name": "esxi:hostd",
+      "raw_log_source": "esxi:hostd",
+      "examples": [
+        {
+          "technique": "T1001.001",
+          "analytic": "AN0033",
+          "channel": "System service interactions"
+        },
+        {
+          "technique": "T1001.002",
+          "analytic": "AN0654",
+          "channel": "Service initiated connections"
+        },
+        {
+          "technique": "T1001.003",
+          "analytic": "AN1297",
+          "channel": "Service-Based Network Connection"
+        },
+        {
+          "technique": "T1005",
+          "analytic": "AN1074",
+          "channel": "Command Execution"
+        },
+        {
+          "technique": "T1016",
+          "analytic": "AN0562",
+          "channel": "None"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_esxi_vmkernel",
+      "name": "esxi:vmkernel",
+      "raw_log_source": "esxi:vmkernel",
+      "examples": [
+        {
+          "technique": "T1001.001",
+          "analytic": "AN0033",
+          "channel": "Network activity"
+        },
+        {
+          "technique": "T1001.002",
+          "analytic": "AN0654",
+          "channel": "Storage access and file ops"
+        },
+        {
+          "technique": "T1008",
+          "analytic": "AN1379",
+          "channel": "None"
+        },
+        {
+          "technique": "T1021",
+          "analytic": "AN0754",
+          "channel": "vim.fault.*, DCUI login, SSH shell"
+        },
+        {
+          "technique": "T1021.004",
+          "analytic": "AN1640",
+          "channel": "port 22 access"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_nsm_content",
+      "name": "NSM:Content",
+      "raw_log_source": "NSM:Content",
+      "examples": [
+        {
+          "technique": "T1001.003",
+          "analytic": "AN1296",
+          "channel": "HTTP Header Metadata"
+        },
+        {
+          "technique": "T1001.003",
+          "analytic": "AN1297",
+          "channel": "TLS Fingerprint and Certificate Analysis"
+        },
+        {
+          "technique": "T1003.006",
+          "analytic": "AN1632",
+          "channel": "Traffic on RPC DRSUAPI"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_macos_keychain",
+      "name": "macos:keychain",
+      "raw_log_source": "macos:keychain",
+      "examples": [
+        {
+          "technique": "T1003",
+          "analytic": "AN0650",
+          "channel": "Access to Keychain DB or system.keychain"
+        },
+        {
+          "technique": "T1649",
+          "analytic": "AN0673",
+          "channel": "~/Library/Keychains, /Library/Keychains"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_microsoft_windows_vss",
+      "name": "WinEventLog:Microsoft-Windows-VSS",
+      "raw_log_source": "WinEventLog:Microsoft-Windows-VSS",
+      "examples": [
+        {
+          "technique": "T1003.003",
+          "analytic": "AN1611",
+          "channel": "Volume Shadow Copy Creation"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_auditd_execve",
+      "name": "auditd:EXECVE",
+      "raw_log_source": "auditd:EXECVE",
+      "examples": [
+        {
+          "technique": "T1003.005",
+          "analytic": "AN1418",
+          "channel": "EXECVE"
+        },
+        {
+          "technique": "T1007",
+          "analytic": "AN1326",
+          "channel": "execve"
+        },
+        {
+          "technique": "T1010",
+          "analytic": "AN0272",
+          "channel": "execve"
+        },
+        {
+          "technique": "T1014",
+          "analytic": "AN1062",
+          "channel": "None"
+        },
+        {
+          "technique": "T1016",
+          "analytic": "AN0560",
+          "channel": "execve"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_linux_osquery",
+      "name": "linux:osquery",
+      "raw_log_source": "linux:osquery",
+      "examples": [
+        {
+          "technique": "T1003.005",
+          "analytic": "AN1418",
+          "channel": "process_events"
+        },
+        {
+          "technique": "T1011.001",
+          "analytic": "AN1532",
+          "channel": "None"
+        },
+        {
+          "technique": "T1014",
+          "analytic": "AN1062",
+          "channel": "file_events"
+        },
+        {
+          "technique": "T1027.001",
+          "analytic": "AN1529",
+          "channel": "file_events"
+        },
+        {
+          "technique": "T1027.005",
+          "analytic": "AN0541",
+          "channel": "file_events"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_linux_sysmon",
+      "name": "linux:Sysmon",
+      "raw_log_source": "linux:Sysmon",
+      "examples": [
+        {
+          "technique": "T1003.007",
+          "analytic": "AN1631",
+          "channel": "EventCode=1"
+        },
+        {
+          "technique": "T1027.013",
+          "analytic": "AN0238",
+          "channel": "EventCode=3, 22"
+        },
+        {
+          "technique": "T1087",
+          "analytic": "AN1613",
+          "channel": "EventCode=1"
+        },
+        {
+          "technique": "T1087.001",
+          "analytic": "AN0847",
+          "channel": "EventCode=1"
+        },
+        {
+          "technique": "T1123",
+          "analytic": "AN0620",
+          "channel": "EventCode=1"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_fs_fsusage",
+      "name": "fs:fsusage",
+      "raw_log_source": "fs:fsusage",
+      "examples": [
+        {
+          "technique": "T1005",
+          "analytic": "AN1072",
+          "channel": "read/write"
+        },
+        {
+          "technique": "T1025",
+          "analytic": "AN1412",
+          "channel": "file reads/writes from /Volumes/"
+        },
+        {
+          "technique": "T1027.001",
+          "analytic": "AN1530",
+          "channel": "file write"
+        },
+        {
+          "technique": "T1027.014",
+          "analytic": "AN0921",
+          "channel": "file open/write"
+        },
+        {
+          "technique": "T1027.015",
+          "analytic": "AN0784",
+          "channel": "file open/write"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_networkdevice_cli",
+      "name": "networkdevice:cli",
+      "raw_log_source": "networkdevice:cli",
+      "examples": [
+        {
+          "technique": "T1005",
+          "analytic": "AN1073",
+          "channel": "command logging"
+        },
+        {
+          "technique": "T1006",
+          "analytic": "AN1194",
+          "channel": "command logging"
+        },
+        {
+          "technique": "T1016",
+          "analytic": "AN0563",
+          "channel": "None"
+        },
+        {
+          "technique": "T1048.003",
+          "analytic": "AN0427",
+          "channel": "CLI command logs"
+        },
+        {
+          "technique": "T1049",
+          "analytic": "AN0907",
+          "channel": "command logs"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_esxis_vmkernel",
+      "name": "esxis:vmkernel",
+      "raw_log_source": "esxis:vmkernel",
+      "examples": [
+        {
+          "technique": "T1005",
+          "analytic": "AN1074",
+          "channel": "Datastore Access"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_esxi_vpxd",
+      "name": "esxi:vpxd",
+      "raw_log_source": "esxi:vpxd",
+      "examples": [
+        {
+          "technique": "T1008",
+          "analytic": "AN1379",
+          "channel": "None"
+        },
+        {
+          "technique": "T1078.002",
+          "analytic": "AN0593",
+          "channel": "/var/log/vmware/vpxd.log"
+        },
+        {
+          "technique": "T1087",
+          "analytic": "AN1617",
+          "channel": "vCenter Management"
+        },
+        {
+          "technique": "T1222",
+          "analytic": "AN0837",
+          "channel": "permission change operations on datastores or VMs"
+        },
+        {
+          "technique": "T1571",
+          "analytic": "AN0636",
+          "channel": "ESXi service connections on unexpected ports"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_linus_syslog",
+      "name": "linus:syslog",
+      "raw_log_source": "linus:syslog",
+      "examples": [
+        {
+          "technique": "T1010",
+          "analytic": "AN0272",
+          "channel": "None"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_system",
+      "name": "WinEventLog:System",
+      "raw_log_source": "WinEventLog:System",
+      "examples": [
+        {
+          "technique": "T1011",
+          "analytic": "AN0212",
+          "channel": "EventCode=5005 (WLAN), EventCode=302 (Bluetooth)"
+        },
+        {
+          "technique": "T1011.001",
+          "analytic": "AN1531",
+          "channel": "EventCode=8001"
+        },
+        {
+          "technique": "T1014",
+          "analytic": "AN1061",
+          "channel": "EventCode=7045"
+        },
+        {
+          "technique": "T1025",
+          "analytic": "AN1410",
+          "channel": "EventCode=2003"
+        },
+        {
+          "technique": "T1029",
+          "analytic": "AN1118",
+          "channel": "EventCode=106, 200"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_linux_syslog",
+      "name": "linux:syslog",
+      "raw_log_source": "linux:syslog",
+      "examples": [
+        {
+          "technique": "T1011.001",
+          "analytic": "AN1532",
+          "channel": "None"
+        },
+        {
+          "technique": "T1014",
+          "analytic": "AN1062",
+          "channel": "kmod"
+        },
+        {
+          "technique": "T1016.001",
+          "analytic": "AN1016",
+          "channel": "network"
+        },
+        {
+          "technique": "T1018",
+          "analytic": "AN1584",
+          "channel": "network"
+        },
+        {
+          "technique": "T1021",
+          "analytic": "AN0751",
+          "channel": "sshd: Accepted password/publickey"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_fs_fsevents",
+      "name": "fs:fsevents",
+      "raw_log_source": "fs:fsevents",
+      "examples": [
+        {
+          "technique": "T1014",
+          "analytic": "AN1063",
+          "channel": "Extensions"
+        },
+        {
+          "technique": "T1080",
+          "analytic": "AN1300",
+          "channel": "Directory events (kFSEventStreamEventFlagItemCreated)"
+        },
+        {
+          "technique": "T1203",
+          "analytic": "AN0799",
+          "channel": "create/write/rename under user-writable paths"
+        },
+        {
+          "technique": "T1204.001",
+          "analytic": "AN0180",
+          "channel": "Create in /Users/*/Downloads or /private/var/folders/* with quarantine attribute"
+        },
+        {
+          "technique": "T1222",
+          "analytic": "AN0836",
+          "channel": "file system events indicating permission or attribute changes"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_esxi_shell",
+      "name": "esxi:shell",
+      "raw_log_source": "esxi:shell",
+      "examples": [
+        {
+          "technique": "T1016.001",
+          "analytic": "AN1018",
+          "channel": "None"
+        },
+        {
+          "technique": "T1021",
+          "analytic": "AN0754",
+          "channel": "Command execution trace"
+        },
+        {
+          "technique": "T1021.004",
+          "analytic": "AN1640",
+          "channel": "None"
+        },
+        {
+          "technique": "T1036",
+          "analytic": "AN0359",
+          "channel": "scripts or binaries with misleading names"
+        },
+        {
+          "technique": "T1037.004",
+          "analytic": "AN0660",
+          "channel": "admin command usage"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_auditd_path",
+      "name": "auditd:PATH",
+      "raw_log_source": "auditd:PATH",
+      "examples": [
+        {
+          "technique": "T1016.002",
+          "analytic": "AN1281",
+          "channel": "file read"
+        },
+        {
+          "technique": "T1037",
+          "analytic": "AN0312",
+          "channel": "PATH"
+        },
+        {
+          "technique": "T1083",
+          "analytic": "AN1041",
+          "channel": "PATH"
+        },
+        {
+          "technique": "T1087.001",
+          "analytic": "AN0847",
+          "channel": "PATH"
+        },
+        {
+          "technique": "T1098",
+          "analytic": "AN0266",
+          "channel": "/etc/passwd or /etc/group file write"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_networkdevice_syslog",
+      "name": "networkdevice:syslog",
+      "raw_log_source": "networkdevice:syslog",
+      "examples": [
+        {
+          "technique": "T1018",
+          "analytic": "AN1587",
+          "channel": "syslog facility LOCAL7 or trap messages"
+        },
+        {
+          "technique": "T1020.001",
+          "analytic": "AN1132",
+          "channel": "Config change: CLI/NETCONF/SNMP – 'monitor session', 'mirror port'"
+        },
+        {
+          "technique": "T1033",
+          "analytic": "AN0257",
+          "channel": "aaa privilege_exec"
+        },
+        {
+          "technique": "T1033",
+          "analytic": "AN0257",
+          "channel": "eventlog"
+        },
+        {
+          "technique": "T1037",
+          "analytic": "AN0315",
+          "channel": "config"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_macos_cron",
+      "name": "macos:cron",
+      "raw_log_source": "macos:cron",
+      "examples": [
+        {
+          "technique": "T1020",
+          "analytic": "AN1115",
+          "channel": "cron/launchd"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_aws_cloudtrail",
+      "name": "AWS:CloudTrail",
+      "raw_log_source": "AWS:CloudTrail",
+      "examples": [
+        {
+          "technique": "T1020.001",
+          "analytic": "AN1131",
+          "channel": "CreateTrafficMirrorSession or ModifyTrafficMirrorTarget"
+        },
+        {
+          "technique": "T1021",
+          "analytic": "AN0753",
+          "channel": "AWS ConsoleLogin, StartSession"
+        },
+        {
+          "technique": "T1021.007",
+          "analytic": "AN0017",
+          "channel": "ConsoleLogin, AssumeRole, ListResources"
+        },
+        {
+          "technique": "T1021.008",
+          "analytic": "AN0594",
+          "channel": "SendSSHPublicKey, StartSession (SSM), EC2InstanceConnect"
+        },
+        {
+          "technique": "T1040",
+          "analytic": "AN0878",
+          "channel": "CreateTrafficMirrorSession / ModifyTrafficMirrorTarget"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_aws_vpcflowlogs",
+      "name": "AWS:VPCFlowLogs",
+      "raw_log_source": "AWS:VPCFlowLogs",
+      "examples": [
+        {
+          "technique": "T1020.001",
+          "analytic": "AN1131",
+          "channel": "Traffic observed on mirror destination instance"
+        },
+        {
+          "technique": "T1021",
+          "analytic": "AN0753",
+          "channel": "Outbound connections to port 22, 3389"
+        },
+        {
+          "technique": "T1048",
+          "analytic": "AN0370",
+          "channel": "Outbound data flows"
+        },
+        {
+          "technique": "T1074.002",
+          "analytic": "AN0198",
+          "channel": "Traffic between instances"
+        },
+        {
+          "technique": "T1190",
+          "analytic": "AN0223",
+          "channel": "VPC/NSG flow logs for pod/instance egress to Internet or metadata"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_networkdevice_flow",
+      "name": "networkdevice:Flow",
+      "raw_log_source": "networkdevice:Flow",
+      "examples": [
+        {
+          "technique": "T1020.001",
+          "analytic": "AN1132",
+          "channel": "Traffic from mirrored interface to mirror target IP"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_esxi_auth",
+      "name": "esxi:auth",
+      "raw_log_source": "esxi:auth",
+      "examples": [
+        {
+          "technique": "T1021.004",
+          "analytic": "AN1640",
+          "channel": "None"
+        },
+        {
+          "technique": "T1057",
+          "analytic": "AN0098",
+          "channel": "user session"
+        },
+        {
+          "technique": "T1059.004",
+          "analytic": "AN1083",
+          "channel": "Shell login or escalation"
+        },
+        {
+          "technique": "T1059.012",
+          "analytic": "AN1537",
+          "channel": "SSH session/login"
+        },
+        {
+          "technique": "T1078.001",
+          "analytic": "AN1286",
+          "channel": "/var/log/auth.log"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_nsm_firewall",
+      "name": "NSM:firewall",
+      "raw_log_source": "NSM:firewall",
+      "examples": [
+        {
+          "technique": "T1021.005",
+          "analytic": "AN0506",
+          "channel": "inbound connection to port 5900"
+        },
+        {
+          "technique": "T1056",
+          "analytic": "AN0285",
+          "channel": "proxy or TLS inspection logs"
+        },
+        {
+          "technique": "T1090",
+          "analytic": "AN1231",
+          "channel": "pf firewall logs"
+        },
+        {
+          "technique": "T1090",
+          "analytic": "AN1233",
+          "channel": "Policy Change / Rule Update"
+        },
+        {
+          "technique": "T1090.003",
+          "analytic": "AN1024",
+          "channel": "Outbound encrypted traffic"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_nsm_connections",
+      "name": "NSM:Connections",
+      "raw_log_source": "NSM:Connections",
+      "examples": [
+        {
+          "technique": "T1021.006",
+          "analytic": "AN1313",
+          "channel": "Inbound on ports 5985/5986"
+        },
+        {
+          "technique": "T1078",
+          "analytic": "AN1544",
+          "channel": "sshd or PAM logins"
+        },
+        {
+          "technique": "T1090",
+          "analytic": "AN1229",
+          "channel": "Outbound Connection"
+        },
+        {
+          "technique": "T1090.001",
+          "analytic": "AN0205",
+          "channel": "Internal connection logging"
+        },
+        {
+          "technique": "T1090.004",
+          "analytic": "AN0564",
+          "channel": "TLS handshake + HTTP headers"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_winrm",
+      "name": "WinEventLog:WinRM",
+      "raw_log_source": "WinEventLog:WinRM",
+      "examples": [
+        {
+          "technique": "T1021.006",
+          "analytic": "AN1313",
+          "channel": "EventCode=6"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_gcp_audit",
+      "name": "gcp:audit",
+      "raw_log_source": "gcp:audit",
+      "examples": [
+        {
+          "technique": "T1021.007",
+          "analytic": "AN0017",
+          "channel": "None"
+        },
+        {
+          "technique": "T1074",
+          "analytic": "AN0043",
+          "channel": "Write operations to storage"
+        },
+        {
+          "technique": "T1078.004",
+          "analytic": "AN1504",
+          "channel": "admin.googleapis.com"
+        },
+        {
+          "technique": "T1078.004",
+          "analytic": "AN1505",
+          "channel": "drive.activity"
+        },
+        {
+          "technique": "T1078.004",
+          "analytic": "AN1506",
+          "channel": "login.event"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_okta_systemlog",
+      "name": "Okta:SystemLog",
+      "raw_log_source": "Okta:SystemLog",
+      "examples": [
+        {
+          "technique": "T1021.007",
+          "analytic": "AN0018",
+          "channel": "user.authentication.sso, app.oauth.grant"
+        },
+        {
+          "technique": "T1059.009",
+          "analytic": "AN0215",
+          "channel": "eventType: user.authentication.sso, app.oauth2.token.grant"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_m365_unified",
+      "name": "m365:unified",
+      "raw_log_source": "m365:unified",
+      "examples": [
+        {
+          "technique": "T1021.007",
+          "analytic": "AN0019",
+          "channel": "FileAccessed, MailboxAccessed"
+        },
+        {
+          "technique": "T1021.007",
+          "analytic": "AN0019",
+          "channel": "UserLoggedIn"
+        },
+        {
+          "technique": "T1070",
+          "analytic": "AN0525",
+          "channel": "PurgeAuditLogs, Remove-MailboxAuditLog"
+        },
+        {
+          "technique": "T1078.004",
+          "analytic": "AN1505",
+          "channel": "FileAccessed, SharingSet"
+        },
+        {
+          "technique": "T1080",
+          "analytic": "AN1301",
+          "channel": "FileUploaded, FileAccessed"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_auth",
+      "name": "saas:auth",
+      "raw_log_source": "saas:auth",
+      "examples": [
+        {
+          "technique": "T1021.007",
+          "analytic": "AN0020",
+          "channel": "LoginSuccess, APIKeyUse, AdminAction"
+        },
+        {
+          "technique": "T1110.003",
+          "analytic": "AN1343",
+          "channel": "signin_failed"
+        },
+        {
+          "technique": "T1189",
+          "analytic": "AN0501",
+          "channel": "Refresh token issuance or refresh token usage from new IPs or user agents"
+        },
+        {
+          "technique": "T1526",
+          "analytic": "AN1130",
+          "channel": "Login, TokenGranted: Discovery actions tied to anomalous login sessions or tokens"
+        },
+        {
+          "technique": "T1606",
+          "analytic": "AN0722",
+          "channel": "API requests made with tokens not associated with expected user logins"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_journald_systemd",
+      "name": "journald:systemd",
+      "raw_log_source": "journald:systemd",
+      "examples": [
+        {
+          "technique": "T1025",
+          "analytic": "AN1411",
+          "channel": "udisks2 or udevd logs"
+        },
+        {
+          "technique": "T1499",
+          "analytic": "AN0585",
+          "channel": "Repeated service restart attempts or unit failures"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_linux_cli",
+      "name": "linux:cli",
+      "raw_log_source": "linux:cli",
+      "examples": [
+        {
+          "technique": "T1027",
+          "analytic": "AN1065",
+          "channel": "Shell history logs"
+        },
+        {
+          "technique": "T1049",
+          "analytic": "AN0904",
+          "channel": "command logging"
+        },
+        {
+          "technique": "T1056.002",
+          "analytic": "AN1441",
+          "channel": "Terminal Command History"
+        },
+        {
+          "technique": "T1070",
+          "analytic": "AN0521",
+          "channel": "cleared or truncated .bash_history"
+        },
+        {
+          "technique": "T1114.003",
+          "analytic": "AN1592",
+          "channel": "/home/*/.bash_history"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_networkdevice_ids",
+      "name": "networkdevice:IDS",
+      "raw_log_source": "networkdevice:IDS",
+      "examples": [
+        {
+          "technique": "T1027",
+          "analytic": "AN1067",
+          "channel": "content inspection / PCAP / HTTP body"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_macos_endpointsecurity",
+      "name": "macos:endpointsecurity",
+      "raw_log_source": "macos:endpointsecurity",
+      "examples": [
+        {
+          "technique": "T1027.002",
+          "analytic": "AN0068",
+          "channel": "ES_EVENT_MMAP"
+        },
+        {
+          "technique": "T1027.008",
+          "analytic": "AN0057",
+          "channel": "ES_EVENT_TYPE_NOTIFY_EXEC"
+        },
+        {
+          "technique": "T1027.009",
+          "analytic": "AN0601",
+          "channel": "ES_EVENT_TYPE_NOTIFY_EXEC"
+        },
+        {
+          "technique": "T1027.010",
+          "analytic": "AN1396",
+          "channel": "ES_EVENT_TYPE_NOTIFY_EXEC"
+        },
+        {
+          "technique": "T1027.013",
+          "analytic": "AN0239",
+          "channel": "es_event_exec"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_application",
+      "name": "WinEventLog:Application",
+      "raw_log_source": "WinEventLog:Application",
+      "examples": [
+        {
+          "technique": "T1027.005",
+          "analytic": "AN0540",
+          "channel": "EventCode=1000"
+        },
+        {
+          "technique": "T1027.011",
+          "analytic": "AN0973",
+          "channel": "WMI Object Creation Events"
+        },
+        {
+          "technique": "T1072",
+          "analytic": "AN0623",
+          "channel": "SCCM, Intune logs"
+        },
+        {
+          "technique": "T1114",
+          "analytic": "AN1309",
+          "channel": "Exchange logs or header artifacts"
+        },
+        {
+          "technique": "T1133",
+          "analytic": "AN1004",
+          "channel": "VPN, Citrix, or remote access gateway logs showing external IP addresses"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_edr_detection",
+      "name": "EDR:detection",
+      "raw_log_source": "EDR:detection",
+      "examples": [
+        {
+          "technique": "T1027.005",
+          "analytic": "AN0541",
+          "channel": "ThreatDetected, QuarantineLog"
+        },
+        {
+          "technique": "T1027.006",
+          "analytic": "AN0872",
+          "channel": "App reputation telemetry"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_network_traffic",
+      "name": "Network Traffic",
+      "raw_log_source": "Network Traffic",
+      "examples": [
+        {
+          "technique": "T1027.006",
+          "analytic": "AN0872",
+          "channel": "None"
+        },
+        {
+          "technique": "T1585",
+          "analytic": "AN2005",
+          "channel": "None"
+        },
+        {
+          "technique": "T1585.001",
+          "analytic": "AN1983",
+          "channel": "None"
+        },
+        {
+          "technique": "T1586",
+          "analytic": "AN2008",
+          "channel": "None"
+        },
+        {
+          "technique": "T1586.001",
+          "analytic": "AN2002",
+          "channel": "None"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_gatekeeper_quarantine_database",
+      "name": "gatekeeper/quarantine database",
+      "raw_log_source": "gatekeeper/quarantine database",
+      "examples": [
+        {
+          "technique": "T1027.006",
+          "analytic": "AN0874",
+          "channel": "LaunchServices quarantine"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_etw_microsoft_windows_kernel_process",
+      "name": "etw:Microsoft-Windows-Kernel-Process",
+      "raw_log_source": "etw:Microsoft-Windows-Kernel-Process",
+      "examples": [
+        {
+          "technique": "T1027.007",
+          "analytic": "AN0250",
+          "channel": "API tracing / stack tracing via ETW or telemetry-based EDR"
+        },
+        {
+          "technique": "T1036.012",
+          "analytic": "AN2029",
+          "channel": "API Calls"
+        },
+        {
+          "technique": "T1055",
+          "analytic": "AN1399",
+          "channel": "API calls"
+        },
+        {
+          "technique": "T1055.003",
+          "analytic": "AN0822",
+          "channel": "API Calls"
+        },
+        {
+          "technique": "T1055.004",
+          "analytic": "AN0277",
+          "channel": "APCQueueOperations"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_edr_file",
+      "name": "EDR:file",
+      "raw_log_source": "EDR:file",
+      "examples": [
+        {
+          "technique": "T1027.008",
+          "analytic": "AN0055",
+          "channel": "File Metadata Inspection (Low String Entropy, Missing PDB)"
+        },
+        {
+          "technique": "T1027.009",
+          "analytic": "AN0599",
+          "channel": "File Metadata Analysis (PE overlays, entropy)"
+        },
+        {
+          "technique": "T1070.006",
+          "analytic": "AN1626",
+          "channel": "SetFileTime"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_ebpf_syscalls",
+      "name": "ebpf:syscalls",
+      "raw_log_source": "ebpf:syscalls",
+      "examples": [
+        {
+          "technique": "T1027.009",
+          "analytic": "AN0600",
+          "channel": "container_file_activity"
+        },
+        {
+          "technique": "T1036",
+          "analytic": "AN0358",
+          "channel": "file_write"
+        },
+        {
+          "technique": "T1046",
+          "analytic": "AN1060",
+          "channel": "execve"
+        },
+        {
+          "technique": "T1046",
+          "analytic": "AN1060",
+          "channel": "socket connect"
+        },
+        {
+          "technique": "T1070",
+          "analytic": "AN0523",
+          "channel": "Unexpected container volume unmount + file deletion"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_linux_cron",
+      "name": "linux:cron",
+      "raw_log_source": "linux:cron",
+      "examples": [
+        {
+          "technique": "T1029",
+          "analytic": "AN1119",
+          "channel": "cron activity"
+        },
+        {
+          "technique": "T1036.004",
+          "analytic": "AN0325",
+          "channel": "cron activity"
+        },
+        {
+          "technique": "T1124",
+          "analytic": "AN0431",
+          "channel": "cron activity"
+        },
+        {
+          "technique": "T1496.001",
+          "analytic": "AN1490",
+          "channel": "Scheduled execution of unknown or unusual script/binary"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_macos_launchd",
+      "name": "macos:launchd",
+      "raw_log_source": "macos:launchd",
+      "examples": [
+        {
+          "technique": "T1029",
+          "analytic": "AN1120",
+          "channel": "launchd.plist and logs"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_fs_fileevents",
+      "name": "fs:fileevents",
+      "raw_log_source": "fs:fileevents",
+      "examples": [
+        {
+          "technique": "T1036",
+          "analytic": "AN0357",
+          "channel": "/var/log/install.log"
+        },
+        {
+          "technique": "T1036.001",
+          "analytic": "AN0090",
+          "channel": "/var/log/install.log"
+        },
+        {
+          "technique": "T1036.003",
+          "analytic": "AN0013",
+          "channel": "/var/log/quarantine.log"
+        },
+        {
+          "technique": "T1036.004",
+          "analytic": "AN0326",
+          "channel": "/Library/LaunchDaemons/*.plist, ~/Library/LaunchAgents/*.plist"
+        },
+        {
+          "technique": "T1176",
+          "analytic": "AN0253",
+          "channel": "creat"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_containerd_runtime",
+      "name": "containerd:runtime",
+      "raw_log_source": "containerd:runtime",
+      "examples": [
+        {
+          "technique": "T1036",
+          "analytic": "AN0358",
+          "channel": "/var/log/containers/*.log"
+        },
+        {
+          "technique": "T1046",
+          "analytic": "AN1060",
+          "channel": "container-level outbound traffic events"
+        },
+        {
+          "technique": "T1053",
+          "analytic": "AN0261",
+          "channel": "file change monitoring within /etc/cron.*, /tmp, or mounted volumes"
+        },
+        {
+          "technique": "T1068",
+          "analytic": "AN1422",
+          "channel": "e.g., containerd, Docker events"
+        },
+        {
+          "technique": "T1610",
+          "analytic": "AN0693",
+          "channel": "CRI CreateContainer/StartContainer with privileged=true OR added capabilities OR host* namespaces"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_docker_events",
+      "name": "docker:events",
+      "raw_log_source": "docker:events",
+      "examples": [
+        {
+          "technique": "T1036",
+          "analytic": "AN0358",
+          "channel": "docker.events.json"
+        },
+        {
+          "technique": "T1059.013",
+          "analytic": "AN0233",
+          "channel": "exec_create: docker exec events targeting running containers from non-CI sources"
+        },
+        {
+          "technique": "T1190",
+          "analytic": "AN0222",
+          "channel": "Docker/Kubernetes audit of exec/attach (kubectl exec) or unexpected child processes inside container"
+        },
+        {
+          "technique": "T1204",
+          "analytic": "AN1317",
+          "channel": "created,started: new container from untrusted registry or unexpected entrypoint"
+        },
+        {
+          "technique": "T1204",
+          "analytic": "AN1317",
+          "channel": "start"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_windows_defender",
+      "name": "WinEventLog:Windows Defender",
+      "raw_log_source": "WinEventLog:Windows Defender",
+      "examples": [
+        {
+          "technique": "T1036.001",
+          "analytic": "AN0089",
+          "channel": "Operational log"
+        },
+        {
+          "technique": "T1036.002",
+          "analytic": "AN1461",
+          "channel": "Operational"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_fs_quarantine",
+      "name": "fs:quarantine",
+      "raw_log_source": "fs:quarantine",
+      "examples": [
+        {
+          "technique": "T1036.002",
+          "analytic": "AN1462",
+          "channel": "/var/log/quarantine.log"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_desktop_file_manager",
+      "name": "desktop:file_manager",
+      "raw_log_source": "desktop:file_manager",
+      "examples": [
+        {
+          "technique": "T1036.002",
+          "analytic": "AN1463",
+          "channel": "nautilus, dolphin, or gvfs logs"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_edr_amsi",
+      "name": "EDR:AMSI",
+      "raw_log_source": "EDR:AMSI",
+      "examples": [
+        {
+          "technique": "T1036.003",
+          "analytic": "AN0012",
+          "channel": "None"
+        },
+        {
+          "technique": "T1127.001",
+          "analytic": "AN1535",
+          "channel": "Malicious inline C#/script blobs embedded in MSBuild projects if intercepted by AMSI-aware loaders (rare but possible via chained LOLBins)"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_auditd_config_change",
+      "name": "auditd:CONFIG_CHANGE",
+      "raw_log_source": "auditd:CONFIG_CHANGE",
+      "examples": [
+        {
+          "technique": "T1036.004",
+          "analytic": "AN0325",
+          "channel": "/var/log/audit/audit.log"
+        },
+        {
+          "technique": "T1490",
+          "analytic": "AN0934",
+          "channel": "/etc/fstab, /etc/systemd/*"
+        },
+        {
+          "technique": "T1546.017",
+          "analytic": "AN1056",
+          "channel": "udev rule reload or trigger command executed"
+        },
+        {
+          "technique": "T1546.018",
+          "analytic": "AN0713",
+          "channel": "chmod or chown of hook files indicating privilege escalation or execution permission change"
+        },
+        {
+          "technique": "T1569.003",
+          "analytic": "AN0200",
+          "channel": "creation or modification of systemd services"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_containerd_events",
+      "name": "containerd:events",
+      "raw_log_source": "containerd:events",
+      "examples": [
+        {
+          "technique": "T1036.005",
+          "analytic": "AN0986",
+          "channel": "Docker or containerd image pulls and process executions"
+        },
+        {
+          "technique": "T1204.003",
+          "analytic": "AN0691",
+          "channel": "Image pull from untrusted registry (name NOT IN allowlist) or new digest never seen before"
+        },
+        {
+          "technique": "T1496",
+          "analytic": "AN0745",
+          "channel": "New container with suspicious image name or high resource usage"
+        },
+        {
+          "technique": "T1496.001",
+          "analytic": "AN1492",
+          "channel": "create"
+        },
+        {
+          "technique": "T1552",
+          "analytic": "AN1158",
+          "channel": "unusual process spawned from container image context"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_kubernetes_apiserver",
+      "name": "kubernetes:apiserver",
+      "raw_log_source": "kubernetes:apiserver",
+      "examples": [
+        {
+          "technique": "T1036.005",
+          "analytic": "AN0986",
+          "channel": "Resource creation and update logs"
+        },
+        {
+          "technique": "T1053.007",
+          "analytic": "AN0582",
+          "channel": "verb=create, resource=cronjobs, group=batch"
+        },
+        {
+          "technique": "T1059.013",
+          "analytic": "AN0233",
+          "channel": "create/exec: Kubernetes API calls to exec into containers or create pods from curl, kubectl, or SDK clients"
+        },
+        {
+          "technique": "T1110.004",
+          "analytic": "AN1268",
+          "channel": "authentication.k8s.io/v1beta1"
+        },
+        {
+          "technique": "T1550.001",
+          "analytic": "AN0530",
+          "channel": "serviceAccount token used in API requests not tied to workload identity"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_windows_osquery",
+      "name": "windows:osquery",
+      "raw_log_source": "windows:osquery",
+      "examples": [
+        {
+          "technique": "T1036.010",
+          "analytic": "AN1077",
+          "channel": "User enumeration with creation/last modified timestamps"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_azure_audit",
+      "name": "azure:audit",
+      "raw_log_source": "azure:audit",
+      "examples": [
+        {
+          "technique": "T1036.010",
+          "analytic": "AN1079",
+          "channel": "Add user"
+        },
+        {
+          "technique": "T1036.010",
+          "analytic": "AN1079",
+          "channel": "Rename user"
+        },
+        {
+          "technique": "T1098.001",
+          "analytic": "AN1469",
+          "channel": "Add service principal credentials, app password added, app role assignment"
+        },
+        {
+          "technique": "T1098.005",
+          "analytic": "AN0103",
+          "channel": "New device object creation"
+        },
+        {
+          "technique": "T1098.005",
+          "analytic": "AN0103",
+          "channel": "Operation IN (\"Add device\", \"Add registered users to device\", \"Add registered owner to device\")"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_okta",
+      "name": "saas:okta",
+      "raw_log_source": "saas:okta",
+      "examples": [
+        {
+          "technique": "T1036.010",
+          "analytic": "AN1079",
+          "channel": "User lifecycle events"
+        },
+        {
+          "technique": "T1078",
+          "analytic": "AN1546",
+          "channel": "Sign-in logs / audit events"
+        },
+        {
+          "technique": "T1078.004",
+          "analytic": "AN1503",
+          "channel": "user.authentication.sso"
+        },
+        {
+          "technique": "T1087",
+          "analytic": "AN1616",
+          "channel": "User Enumeration Events"
+        },
+        {
+          "technique": "T1087.004",
+          "analytic": "AN1090",
+          "channel": "System API Call: user.read, group.read"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_docker_daemon",
+      "name": "docker:daemon",
+      "raw_log_source": "docker:daemon",
+      "examples": [
+        {
+          "technique": "T1036.010",
+          "analytic": "AN1080",
+          "channel": "ExecCreate + usermod or useradd"
+        },
+        {
+          "technique": "T1070",
+          "analytic": "AN0523",
+          "channel": "container file operations"
+        },
+        {
+          "technique": "T1525",
+          "analytic": "AN0946",
+          "channel": "docker build or docker commit commands followed by docker push to internal registry"
+        },
+        {
+          "technique": "T1609",
+          "analytic": "AN0177",
+          "channel": "docker exec or docker run with unexpected command/entrypoint"
+        },
+        {
+          "technique": "T1610",
+          "analytic": "AN0693",
+          "channel": "container_create,container_start"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_ebpf_tracepoints",
+      "name": "ebpf:tracepoints",
+      "raw_log_source": "ebpf:tracepoints",
+      "examples": [
+        {
+          "technique": "T1036.011",
+          "analytic": "AN0466",
+          "channel": "Runtime memory overwrite of argv[] memory region"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_taskscheduler",
+      "name": "WinEventLog:TaskScheduler",
+      "raw_log_source": "WinEventLog:TaskScheduler",
+      "examples": [
+        {
+          "technique": "T1037",
+          "analytic": "AN0311",
+          "channel": "EventCode=106"
+        },
+        {
+          "technique": "T1070.009",
+          "analytic": "AN0113",
+          "channel": "EventCode=106"
+        },
+        {
+          "technique": "T1124",
+          "analytic": "AN0430",
+          "channel": "EventCode=106"
+        },
+        {
+          "technique": "T1124",
+          "analytic": "AN0430",
+          "channel": "Task registration/execution shortly after a time discovery event"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_fs_plist",
+      "name": "fs:plist",
+      "raw_log_source": "fs:plist",
+      "examples": [
+        {
+          "technique": "T1037.002",
+          "analytic": "AN0682",
+          "channel": "/var/root/Library/Preferences/com.apple.loginwindow.plist"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_esxi_syslog",
+      "name": "esxi:syslog",
+      "raw_log_source": "esxi:syslog",
+      "examples": [
+        {
+          "technique": "T1037.004",
+          "analytic": "AN0660",
+          "channel": "boot logs"
+        },
+        {
+          "technique": "T1041",
+          "analytic": "AN0991",
+          "channel": "guest OS outbound transfer logs"
+        },
+        {
+          "technique": "T1071.004",
+          "analytic": "AN1125",
+          "channel": "/var/log/syslog.log"
+        },
+        {
+          "technique": "T1124",
+          "analytic": "AN0433",
+          "channel": "/var/log/vpxa.log task invocations tied to time configuration"
+        },
+        {
+          "technique": "T1564",
+          "analytic": "AN1387",
+          "channel": "Datastore file hidden or renamed unexpectedly"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_macos_fsevents",
+      "name": "macos:fsevents",
+      "raw_log_source": "macos:fsevents",
+      "examples": [
+        {
+          "technique": "T1037.005",
+          "analytic": "AN1197",
+          "channel": "/Library/StartupItems/, ~/Library/LaunchAgents/"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_networkconfig",
+      "name": "networkconfig",
+      "raw_log_source": "networkconfig",
+      "examples": [
+        {
+          "technique": "T1040",
+          "analytic": "AN0876",
+          "channel": "interface flag PROMISC, netstat | ip link | ethtool"
+        },
+        {
+          "technique": "T1556.004",
+          "analytic": "AN0758",
+          "channel": "unexpected OS image file upload or modification events"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_esxi_vpxa",
+      "name": "esxi:vpxa",
+      "raw_log_source": "esxi:vpxa",
+      "examples": [
+        {
+          "technique": "T1041",
+          "analytic": "AN0991",
+          "channel": "connection attempts and data transmission logs"
+        },
+        {
+          "technique": "T1098",
+          "analytic": "AN0269",
+          "channel": "vim.SessionManager.login / vim.AccountManager.createUser"
+        },
+        {
+          "technique": "T1531",
+          "analytic": "AN0337",
+          "channel": "user login from unexpected IP or non-admin user role"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_wmi",
+      "name": "WinEventLog:WMI",
+      "raw_log_source": "WinEventLog:WMI",
+      "examples": [
+        {
+          "technique": "T1047",
+          "analytic": "AN1031",
+          "channel": "EventCode=5857, 5858, 5860, 5861"
+        },
+        {
+          "technique": "T1222.001",
+          "analytic": "AN1177",
+          "channel": "EventCode=5857, 5858, 5860, 5861"
+        },
+        {
+          "technique": "T1480",
+          "analytic": "AN1551",
+          "channel": "EventCode=5857, 5858, 5860, 5861"
+        },
+        {
+          "technique": "T1480.001",
+          "analytic": "AN1305",
+          "channel": "EventCode=5857, 5858, 5860, 5861"
+        },
+        {
+          "technique": "T1546",
+          "analytic": "AN0024",
+          "channel": "Creation or modification of __EventFilter, __FilterToConsumerBinding, or CommandLineEventConsumer"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_snmp_trap",
+      "name": "snmp:trap",
+      "raw_log_source": "snmp:trap",
+      "examples": [
+        {
+          "technique": "T1049",
+          "analytic": "AN0907",
+          "channel": "management queries"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_azure_activity",
+      "name": "azure:activity",
+      "raw_log_source": "azure:activity",
+      "examples": [
+        {
+          "technique": "T1049",
+          "analytic": "AN0908",
+          "channel": "networkInsightsLogs"
+        },
+        {
+          "technique": "T1059.009",
+          "analytic": "AN0215",
+          "channel": "operationName: Write, Access Review, RoleAssignment"
+        },
+        {
+          "technique": "T1087.004",
+          "analytic": "AN1088",
+          "channel": "Azure CLI Operation: Microsoft.Graph/users/read"
+        },
+        {
+          "technique": "T1204.003",
+          "analytic": "AN0692",
+          "channel": "Microsoft.Compute/virtualMachines/write: imageReference publisher NOT IN allowlist OR plan is new/unknown"
+        },
+        {
+          "technique": "T1556.009",
+          "analytic": "AN0088",
+          "channel": "Update conditionalAccessPolicy"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_esxi_cron",
+      "name": "esxi:cron",
+      "raw_log_source": "esxi:cron",
+      "examples": [
+        {
+          "technique": "T1053",
+          "analytic": "AN0262",
+          "channel": "manual edits to /etc/rc.local.d/local.sh or cron.d"
+        },
+        {
+          "technique": "T1053.003",
+          "analytic": "AN0807",
+          "channel": "execution of scheduled job"
+        },
+        {
+          "technique": "T1104",
+          "analytic": "AN0640",
+          "channel": "process or cron activity"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_container_proxy",
+      "name": "container:proxy",
+      "raw_log_source": "container:proxy",
+      "examples": [
+        {
+          "technique": "T1053.007",
+          "analytic": "AN0582",
+          "channel": "outbound/inbound network activity from spawned pods"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_kubernetes_events",
+      "name": "kubernetes:events",
+      "raw_log_source": "kubernetes:events",
+      "examples": [
+        {
+          "technique": "T1053.007",
+          "analytic": "AN0582",
+          "channel": "container start/stop activity via Docker, containerd, or CRI-O"
+        },
+        {
+          "technique": "T1204.003",
+          "analytic": "AN0691",
+          "channel": "start: ContainerStarted or Pulling image → Started container"
+        },
+        {
+          "technique": "T1499",
+          "analytic": "AN0588",
+          "channel": "CrashLoopBackOff, OOMKilled, container restart count exceeds threshold"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_linux_procfs",
+      "name": "linux:procfs",
+      "raw_log_source": "linux:procfs",
+      "examples": [
+        {
+          "technique": "T1055",
+          "analytic": "AN1400",
+          "channel": "/proc/[pid]/maps, /proc/[pid]/mem"
+        },
+        {
+          "technique": "T1496",
+          "analytic": "AN0742",
+          "channel": "Sustained high /proc/[pid]/stat usage"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_macos_syslog",
+      "name": "macos:syslog",
+      "raw_log_source": "macos:syslog",
+      "examples": [
+        {
+          "technique": "T1055",
+          "analytic": "AN1401",
+          "channel": "DYLD_INSERT_LIBRARIES anomalies"
+        },
+        {
+          "technique": "T1059.004",
+          "analytic": "AN1082",
+          "channel": "system.log, asl.log"
+        },
+        {
+          "technique": "T1059.005",
+          "analytic": "AN0210",
+          "channel": "system.log"
+        },
+        {
+          "technique": "T1059.006",
+          "analytic": "AN0173",
+          "channel": "system.log"
+        },
+        {
+          "technique": "T1059.007",
+          "analytic": "AN0734",
+          "channel": "/var/log/system.log"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_edr_memory",
+      "name": "EDR:memory",
+      "raw_log_source": "EDR:memory",
+      "examples": [
+        {
+          "technique": "T1055.005",
+          "analytic": "AN1289",
+          "channel": "MemoryWriteToExecutable"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_etw_microsoft_windows_win32k",
+      "name": "etw:Microsoft-Windows-Win32k",
+      "raw_log_source": "etw:Microsoft-Windows-Win32k",
+      "examples": [
+        {
+          "technique": "T1055.011",
+          "analytic": "AN0608",
+          "channel": "SetWindowLong, SetClassLong, NtUserMessageCall, SendNotifyMessage, PostMessage"
+        },
+        {
+          "technique": "T1055.015",
+          "analytic": "AN0941",
+          "channel": "SendMessage, PostMessage, LVM_*"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_auditd_file_events",
+      "name": "auditd:file-events",
+      "raw_log_source": "auditd:file-events",
+      "examples": [
+        {
+          "technique": "T1055.014",
+          "analytic": "AN1241",
+          "channel": "open of suspicious .so from non-standard paths"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_auditd_memprotect",
+      "name": "auditd:memprotect",
+      "raw_log_source": "auditd:memprotect",
+      "examples": [
+        {
+          "technique": "T1055.014",
+          "analytic": "AN1241",
+          "channel": "change from PROT_READ|PROT_WRITE to PROT_EXEC"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_iis",
+      "name": "WinEventLog:iis",
+      "raw_log_source": "WinEventLog:iis",
+      "examples": [
+        {
+          "technique": "T1056.003",
+          "analytic": "AN1321",
+          "channel": "IIS Logs"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_esxi_vobd",
+      "name": "esxi:vobd",
+      "raw_log_source": "esxi:vobd",
+      "examples": [
+        {
+          "technique": "T1059",
+          "analytic": "AN1431",
+          "channel": "shell session start"
+        },
+        {
+          "technique": "T1059.006",
+          "analytic": "AN0175",
+          "channel": "/var/log/vobd.log"
+        },
+        {
+          "technique": "T1102.001",
+          "analytic": "AN0161",
+          "channel": "Network Events"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_edr_scriptblock",
+      "name": "EDR:scriptblock",
+      "raw_log_source": "EDR:scriptblock",
+      "examples": [
+        {
+          "technique": "T1059.003",
+          "analytic": "AN0578",
+          "channel": "Process Tree + Script Block Logging"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_edr_hunting",
+      "name": "EDR:hunting",
+      "raw_log_source": "EDR:hunting",
+      "examples": [
+        {
+          "technique": "T1059.006",
+          "analytic": "AN0172",
+          "channel": "Advanced Hunting: DeviceProcessEvents + DeviceNetworkEvents"
+        },
+        {
+          "technique": "T1552.002",
+          "analytic": "AN0694",
+          "channel": "Behavioral rule for registry enumeration under credential-related paths"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_m365_defender",
+      "name": "m365:defender",
+      "raw_log_source": "m365:defender",
+      "examples": [
+        {
+          "technique": "T1059.007",
+          "analytic": "AN0733",
+          "channel": "ScriptBlockLogging + AMSI"
+        },
+        {
+          "technique": "T1080",
+          "analytic": "AN1302",
+          "channel": "OfficeTelemetry or DLP"
+        },
+        {
+          "technique": "T1087.004",
+          "analytic": "AN1087",
+          "channel": "Activity Log: Command Invocation"
+        },
+        {
+          "technique": "T1132.002",
+          "analytic": "AN0927",
+          "channel": "NetworkConnection: high out:in ratio, periodic beacons, protocol mismatch"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_networkdevice_runtime",
+      "name": "networkdevice:runtime",
+      "raw_log_source": "networkdevice:runtime",
+      "examples": [
+        {
+          "technique": "T1059.011",
+          "analytic": "AN0281",
+          "channel": "runtime"
+        },
+        {
+          "technique": "T1542.001",
+          "analytic": "AN0276",
+          "channel": "Firmware image uploaded via TFTP/FTP/SCP"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_kubernetes_audit",
+      "name": "kubernetes:audit",
+      "raw_log_source": "kubernetes:audit",
+      "examples": [
+        {
+          "technique": "T1059.013",
+          "analytic": "AN0233",
+          "channel": "Shell process (e.g., /bin/sh, /bin/bash) spawned in a container without an interactive session attached (i.e., automation anomaly)"
+        },
+        {
+          "technique": "T1078",
+          "analytic": "AN1547",
+          "channel": "authentication.k8s.io"
+        },
+        {
+          "technique": "T1098.006",
+          "analytic": "AN1579",
+          "channel": "create or update events for RoleBinding or ClusterRoleBinding objects"
+        },
+        {
+          "technique": "T1110.003",
+          "analytic": "AN1341",
+          "channel": "Failed login"
+        },
+        {
+          "technique": "T1133",
+          "analytic": "AN1007",
+          "channel": "Unauthorized container creation or kubelet exec logs"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_m365_exchange",
+      "name": "m365:exchange",
+      "raw_log_source": "m365:exchange",
+      "examples": [
+        {
+          "technique": "T1069.003",
+          "analytic": "AN0696",
+          "channel": "Get-RoleGroup, Get-DistributionGroup"
+        },
+        {
+          "technique": "T1070",
+          "analytic": "AN0525",
+          "channel": "Remove-InboxRule, Clear-Mailbox"
+        },
+        {
+          "technique": "T1070.008",
+          "analytic": "AN0737",
+          "channel": "Transport Rule Modification"
+        },
+        {
+          "technique": "T1070.008",
+          "analytic": "AN0740",
+          "channel": "Admin Audit Logs, Transport Rules"
+        },
+        {
+          "technique": "T1110.003",
+          "analytic": "AN1342",
+          "channel": "FailedLogin"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_m365_sharepoint",
+      "name": "m365:sharepoint",
+      "raw_log_source": "m365:sharepoint",
+      "examples": [
+        {
+          "technique": "T1069.003",
+          "analytic": "AN0696",
+          "channel": "Enumerate ACLs/role bindings"
+        },
+        {
+          "technique": "T1213.002",
+          "analytic": "AN1380",
+          "channel": "Multiple file download operations on a site by a privileged account in a short time window"
+        },
+        {
+          "technique": "T1530",
+          "analytic": "AN1330",
+          "channel": "AnonymousLinkCreated, FileDownloaded"
+        },
+        {
+          "technique": "T1606.002",
+          "analytic": "AN0422",
+          "channel": "File access with forged or anomalous SAML claims"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_salesforce",
+      "name": "saas:salesforce",
+      "raw_log_source": "saas:salesforce",
+      "examples": [
+        {
+          "technique": "T1069.003",
+          "analytic": "AN0697",
+          "channel": "GET /services/data/vXX.X/groups"
+        },
+        {
+          "technique": "T1199",
+          "analytic": "AN1349",
+          "channel": "ConnectedApp OAuth policy change / Login as user"
+        },
+        {
+          "technique": "T1213.004",
+          "analytic": "AN1520",
+          "channel": "DataExport, RestAPI, Login, ReportExport"
+        },
+        {
+          "technique": "T1538",
+          "analytic": "AN0811",
+          "channel": "Login"
+        },
+        {
+          "technique": "T1550.001",
+          "analytic": "AN0528",
+          "channel": "API login using access_token without login history"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_edr_cli",
+      "name": "EDR:cli",
+      "raw_log_source": "EDR:cli",
+      "examples": [
+        {
+          "technique": "T1070.007",
+          "analytic": "AN0133",
+          "channel": "Command Line Telemetry"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_macos_jamf",
+      "name": "macos:jamf",
+      "raw_log_source": "macos:jamf",
+      "examples": [
+        {
+          "technique": "T1072",
+          "analytic": "AN0625",
+          "channel": "RemoteCommandExecution"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_microsoft_windows_smbclient_security",
+      "name": "WinEventLog:Microsoft-Windows-SMBClient/Security",
+      "raw_log_source": "WinEventLog:Microsoft-Windows-SMBClient/Security",
+      "examples": [
+        {
+          "technique": "T1074.002",
+          "analytic": "AN0194",
+          "channel": "EventCode=31001"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_esxi_vob",
+      "name": "esxi:vob",
+      "raw_log_source": "esxi:vob",
+      "examples": [
+        {
+          "technique": "T1074.002",
+          "analytic": "AN0197",
+          "channel": "NFS/remote access logs"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_auditd_user_login",
+      "name": "auditd:USER_LOGIN",
+      "raw_log_source": "auditd:USER_LOGIN",
+      "examples": [
+        {
+          "technique": "T1078.001",
+          "analytic": "AN1284",
+          "channel": "USER_LOGIN"
+        },
+        {
+          "technique": "T1078.003",
+          "analytic": "AN1138",
+          "channel": "USER_LOGIN"
+        },
+        {
+          "technique": "T1110",
+          "analytic": "AN1276",
+          "channel": "USER_AUTH"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_linux_auth",
+      "name": "linux:auth",
+      "raw_log_source": "linux:auth",
+      "examples": [
+        {
+          "technique": "T1078.003",
+          "analytic": "AN1138",
+          "channel": "sshd login"
+        },
+        {
+          "technique": "T1547.013",
+          "analytic": "AN1096",
+          "channel": "User login event followed by unexpected process tree"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_azure_signinlogs",
+      "name": "azure:signinlogs",
+      "raw_log_source": "azure:signinlogs",
+      "examples": [
+        {
+          "technique": "T1078.004",
+          "analytic": "AN1503",
+          "channel": "Sign-in activity"
+        },
+        {
+          "technique": "T1087",
+          "analytic": "AN1616",
+          "channel": "Graph API Query"
+        },
+        {
+          "technique": "T1087.003",
+          "analytic": "AN0642",
+          "channel": "Unusual Token Usage or Application Consent"
+        },
+        {
+          "technique": "T1087.004",
+          "analytic": "AN1087",
+          "channel": "Interactive/Non-Interactive Sign-In"
+        },
+        {
+          "technique": "T1110",
+          "analytic": "AN1277",
+          "channel": "Sign-in logs"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_m365_signinlogs",
+      "name": "m365:signinlogs",
+      "raw_log_source": "m365:signinlogs",
+      "examples": [
+        {
+          "technique": "T1078.004",
+          "analytic": "AN1506",
+          "channel": "UserLogin"
+        },
+        {
+          "technique": "T1213.004",
+          "analytic": "AN1520",
+          "channel": "UserLoggedIn"
+        },
+        {
+          "technique": "T1213.005",
+          "analytic": "AN1565",
+          "channel": "UserLoggedIn"
+        },
+        {
+          "technique": "T1213.005",
+          "analytic": "AN1566",
+          "channel": "UserLoggedIn"
+        },
+        {
+          "technique": "T1526",
+          "analytic": "AN1129",
+          "channel": "UserLogin: Discovery operations shortly after account logins from new geolocations"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_gcp_workspaceaudit",
+      "name": "gcp:workspaceaudit",
+      "raw_log_source": "gcp:workspaceaudit",
+      "examples": [
+        {
+          "technique": "T1080",
+          "analytic": "AN1301",
+          "channel": "drive.activity logs"
+        },
+        {
+          "technique": "T1548.005",
+          "analytic": "AN1106",
+          "channel": "Token Generation via Domain Delegation"
+        },
+        {
+          "technique": "T1684.001",
+          "analytic": "AN0795",
+          "channel": "SendAs: Outbound messages with alias identities that differ from primary account"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_vpxd_log",
+      "name": "vpxd.log",
+      "raw_log_source": "vpxd.log",
+      "examples": [
+        {
+          "technique": "T1087.001",
+          "analytic": "AN0849",
+          "channel": "vCenter Management"
+        },
+        {
+          "technique": "T1102",
+          "analytic": "AN1192",
+          "channel": "API communication"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_linuxsyslog",
+      "name": "linuxsyslog",
+      "raw_log_source": "linuxsyslog",
+      "examples": [
+        {
+          "technique": "T1087.002",
+          "analytic": "AN0364",
+          "channel": "nslcd or winbind logs"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_microsoft_entra_id_audit_logs",
+      "name": "Microsoft Entra ID Audit Logs",
+      "raw_log_source": "Microsoft Entra ID Audit Logs",
+      "examples": [
+        {
+          "technique": "T1087.004",
+          "analytic": "AN1087",
+          "channel": "RoleManagement.Read.Directory or Directory.Read.All"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_microsoft_graph_api_logs",
+      "name": "Microsoft Graph API Logs",
+      "raw_log_source": "Microsoft Graph API Logs",
+      "examples": [
+        {
+          "technique": "T1087.004",
+          "analytic": "AN1089",
+          "channel": "users.list, directoryObjects.getByIds"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_google_admin_audit",
+      "name": "Google Admin Audit",
+      "raw_log_source": "Google Admin Audit",
+      "examples": [
+        {
+          "technique": "T1087.004",
+          "analytic": "AN1090",
+          "channel": "users.list, groups.list"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_windows_firewall_log",
+      "name": "Windows Firewall Log",
+      "raw_log_source": "Windows Firewall Log",
+      "examples": [
+        {
+          "technique": "T1090.001",
+          "analytic": "AN0204",
+          "channel": "SMB over high port"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_firewall_audit_logs",
+      "name": "Firewall Audit Logs",
+      "raw_log_source": "Firewall Audit Logs",
+      "examples": [
+        {
+          "technique": "T1090.001",
+          "analytic": "AN0208",
+          "channel": "Config Change"
+        },
+        {
+          "technique": "T1090.002",
+          "analytic": "AN0926",
+          "channel": "Outbound NAT Rule Changes"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_microsoft_windows_windows_defender_operational",
+      "name": "WinEventLog:Microsoft-Windows-Windows Defender/Operational",
+      "raw_log_source": "WinEventLog:Microsoft-Windows-Windows Defender/Operational",
+      "examples": [
+        {
+          "technique": "T1090.002",
+          "analytic": "AN0922",
+          "channel": "Unusual external domain access"
+        },
+        {
+          "technique": "T1091",
+          "analytic": "AN0841",
+          "channel": "Suspicious file execution on removable media path"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_dns_query",
+      "name": "dns:query",
+      "raw_log_source": "dns:query",
+      "examples": [
+        {
+          "technique": "T1090.003",
+          "analytic": "AN1020",
+          "channel": "Outbound resolution to hidden service domains (e.g., `.onion`)"
+        },
+        {
+          "technique": "T1665",
+          "analytic": "AN1148",
+          "channel": "Excessive lookups for domains with suspicious WHOIS or short TTL values"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_netfilter_iptables",
+      "name": "Netfilter/iptables",
+      "raw_log_source": "Netfilter/iptables",
+      "examples": [
+        {
+          "technique": "T1090.003",
+          "analytic": "AN1021",
+          "channel": "Forwarded packets log"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_esxi_esxupdate",
+      "name": "esxi:esxupdate",
+      "raw_log_source": "esxi:esxupdate",
+      "examples": [
+        {
+          "technique": "T1090.003",
+          "analytic": "AN1023",
+          "channel": "/var/log/esxupdate.log or /var/log/vmksummary.log"
+        },
+        {
+          "technique": "T1505.006",
+          "analytic": "AN1475",
+          "channel": "/var/log/esxupdate.log contains VIB installed with `--force` or `--no-sig-check` and non-standard acceptance levels"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_m365_audit",
+      "name": "m365:audit",
+      "raw_log_source": "m365:audit",
+      "examples": [
+        {
+          "technique": "T1098.003",
+          "analytic": "AN0772",
+          "channel": "Add member to role, Add app role assignment"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_macos_auth",
+      "name": "macos:auth",
+      "raw_log_source": "macos:auth",
+      "examples": [
+        {
+          "technique": "T1098.004",
+          "analytic": "AN0351",
+          "channel": "~/.ssh/authorized_keys"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_applicationlog_entraidportal",
+      "name": "ApplicationLog:EntraIDPortal",
+      "raw_log_source": "ApplicationLog:EntraIDPortal",
+      "examples": [
+        {
+          "technique": "T1098.005",
+          "analytic": "AN0103",
+          "channel": "DeviceRegistration events"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_applicationlog_intune_mdm_logs",
+      "name": "ApplicationLog:Intune/MDM Logs",
+      "raw_log_source": "ApplicationLog:Intune/MDM Logs",
+      "examples": [
+        {
+          "technique": "T1098.005",
+          "analytic": "AN0104",
+          "channel": "Enrollment events (e.g., MDMDeviceRegistration)"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_etw_microsoft_windows_ndis_packetcapture",
+      "name": "etw:Microsoft-Windows-NDIS-PacketCapture",
+      "raw_log_source": "etw:Microsoft-Windows-NDIS-PacketCapture",
+      "examples": [
+        {
+          "technique": "T1102.001",
+          "analytic": "AN0158",
+          "channel": "TLS Handshake/Network Flow"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_etw_microsoft_windows_wininet",
+      "name": "etw:Microsoft-Windows-WinINet",
+      "raw_log_source": "etw:Microsoft-Windows-WinINet",
+      "examples": [
+        {
+          "technique": "T1102.002",
+          "analytic": "AN0100",
+          "channel": "HTTPS Inspection"
+        },
+        {
+          "technique": "T1102.003",
+          "analytic": "AN1599",
+          "channel": "WinINet API telemetry"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_iptables_log",
+      "name": "iptables:LOG",
+      "raw_log_source": "iptables:LOG",
+      "examples": [
+        {
+          "technique": "T1102.003",
+          "analytic": "AN1600",
+          "channel": "OUTBOUND"
+        },
+        {
+          "technique": "T1104",
+          "analytic": "AN0638",
+          "channel": "OUTBOUND"
+        },
+        {
+          "technique": "T1105",
+          "analytic": "AN0166",
+          "channel": "TCP connections"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_snmp_syslog",
+      "name": "snmp:syslog",
+      "raw_log_source": "snmp:syslog",
+      "examples": [
+        {
+          "technique": "T1105",
+          "analytic": "AN0169",
+          "channel": "firmware write/log event"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_gcpauditlogs_login_googleapis_com",
+      "name": "GCPAuditLogs:login.googleapis.com",
+      "raw_log_source": "GCPAuditLogs:login.googleapis.com",
+      "examples": [
+        {
+          "technique": "T1110.001",
+          "analytic": "AN1526",
+          "channel": "Failed sign-in events"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_app_auth",
+      "name": "saas-app:auth",
+      "raw_log_source": "saas-app:auth",
+      "examples": [
+        {
+          "technique": "T1110.004",
+          "analytic": "AN1266",
+          "channel": "login_failure"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_azure_ad",
+      "name": "azure:ad",
+      "raw_log_source": "azure:ad",
+      "examples": [
+        {
+          "technique": "T1114",
+          "analytic": "AN1312",
+          "channel": "SignInEvents"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_m365_purview",
+      "name": "m365:purview",
+      "raw_log_source": "m365:purview",
+      "examples": [
+        {
+          "technique": "T1114.002",
+          "analytic": "AN0131",
+          "channel": "MailItemsAccessed & Exchange Audit"
+        },
+        {
+          "technique": "T1114.002",
+          "analytic": "AN0132",
+          "channel": "MailItemsAccessed, Search-Mailbox events"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_fs_plist_monitoring",
+      "name": "fs:plist_monitoring",
+      "raw_log_source": "fs:plist_monitoring",
+      "examples": [
+        {
+          "technique": "T1114.003",
+          "analytic": "AN1590",
+          "channel": "/Users/*/Library/Mail/V*/MailData/RulesActiveState.plist"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_m365_messagetrace",
+      "name": "m365:messagetrace",
+      "raw_log_source": "m365:messagetrace",
+      "examples": [
+        {
+          "technique": "T1114.003",
+          "analytic": "AN1591",
+          "channel": "X-MS-Exchange-Organization-AutoForwarded"
+        },
+        {
+          "technique": "T1137.003",
+          "analytic": "AN0086",
+          "channel": "Inbound email triggers execution of mailbox-stored custom form"
+        },
+        {
+          "technique": "T1137.004",
+          "analytic": "AN0503",
+          "channel": "Inbound email triggering Outlook to auto-access folder tied to malicious Home Page"
+        },
+        {
+          "technique": "T1137.005",
+          "analytic": "AN0264",
+          "channel": "Inbound email matches crafted rule trigger pattern tied to persistence logic"
+        },
+        {
+          "technique": "T1684.002",
+          "analytic": "AN1202",
+          "channel": "AuthenticationDetails=fail OR SPF=fail OR DKIM=fail OR DMARC=fail"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_apple_tcc_logs",
+      "name": "Apple TCC Logs",
+      "raw_log_source": "Apple TCC Logs",
+      "examples": [
+        {
+          "technique": "T1123",
+          "analytic": "AN0621",
+          "channel": "Microphone Access Events"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_edr_telemetry",
+      "name": "EDR:Telemetry",
+      "raw_log_source": "EDR:Telemetry",
+      "examples": [
+        {
+          "technique": "T1124",
+          "analytic": "AN0430",
+          "channel": "Process lineage and API usage enrichment (GetSystemTime, GetTimeZoneInformation, NtQuerySystemTime)"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_networkdevice_config",
+      "name": "networkdevice:config",
+      "raw_log_source": "networkdevice:config",
+      "examples": [
+        {
+          "technique": "T1124",
+          "analytic": "AN0434",
+          "channel": "config-change: timezone or ntp server configuration change after a time query command"
+        },
+        {
+          "technique": "T1542",
+          "analytic": "AN0777",
+          "channel": "Boot variable modified to point to non-standard or unsigned image"
+        },
+        {
+          "technique": "T1542.001",
+          "analytic": "AN0276",
+          "channel": "Boot image path or firmware configuration variable modified outside of maintenance windows"
+        },
+        {
+          "technique": "T1542.004",
+          "analytic": "AN0497",
+          "channel": "Log entries indicating ROMMON image upgrade commands (boot system, upgrade rom-monitor)"
+        },
+        {
+          "technique": "T1542.005",
+          "analytic": "AN1603",
+          "channel": "Configuration changes referencing 'boot system tftp' or modification of startup-config pointing to external TFTP servers"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_microsoft_windows_windows_camera_frame_server_operational",
+      "name": "WinEventLog:Microsoft-Windows-Windows Camera Frame Server/Operational",
+      "raw_log_source": "WinEventLog:Microsoft-Windows-Windows Camera Frame Server/Operational",
+      "examples": [
+        {
+          "technique": "T1125",
+          "analytic": "AN0568",
+          "channel": "Process session start/stop events for camera pipeline by unexpected executables"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_applocker",
+      "name": "WinEventLog:AppLocker",
+      "raw_log_source": "WinEventLog:AppLocker",
+      "examples": [
+        {
+          "technique": "T1127",
+          "analytic": "AN0488",
+          "channel": "AppLocker audit/blocks showing developer utilities executing scripts/binaries outside policy"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_microsoft_windows_codeintegrity_operational",
+      "name": "WinEventLog:Microsoft-Windows-CodeIntegrity/Operational",
+      "raw_log_source": "WinEventLog:Microsoft-Windows-CodeIntegrity/Operational",
+      "examples": [
+        {
+          "technique": "T1127.001",
+          "analytic": "AN1535",
+          "channel": "Unsigned/invalid signature modules or images loaded by msbuild.exe or its children"
+        },
+        {
+          "technique": "T1127.003",
+          "analytic": "AN1610",
+          "channel": "Unsigned or untrusted modules loaded during JamPlus.exe runtime"
+        },
+        {
+          "technique": "T1129",
+          "analytic": "AN0052",
+          "channel": "CodeIntegrity/WDAC events indicating unsigned/invalid DLL loads"
+        },
+        {
+          "technique": "T1195",
+          "analytic": "AN1480",
+          "channel": "CodeIntegrity reports 'Invalid image hash' or 'Unsigned image' for new/updated binaries"
+        },
+        {
+          "technique": "T1195.001",
+          "analytic": "AN0021",
+          "channel": "Invalid/Unsigned image when developer tool launches newly installed binaries"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_microsoft_windows_security_mitigations_kernelmode",
+      "name": "WinEventLog:Microsoft-Windows-Security-Mitigations/KernelMode",
+      "raw_log_source": "WinEventLog:Microsoft-Windows-Security-Mitigations/KernelMode",
+      "examples": [
+        {
+          "technique": "T1127.002",
+          "analytic": "AN0550",
+          "channel": "ETW telemetry indicating ClickOnce deployment (dfsvc.exe) launching payloads"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_esxilogs_authlog",
+      "name": "ESXiLogs:authlog",
+      "raw_log_source": "ESXiLogs:authlog",
+      "examples": [
+        {
+          "technique": "T1132",
+          "analytic": "AN0305",
+          "channel": "Unexpected login followed by encoding commands"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_m365defender_devicenetworkevents",
+      "name": "M365Defender:DeviceNetworkEvents",
+      "raw_log_source": "M365Defender:DeviceNetworkEvents",
+      "examples": [
+        {
+          "technique": "T1132.001",
+          "analytic": "AN0345",
+          "channel": "NetworkConnection: bytes_sent >> bytes_received anomaly"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_pf_logs",
+      "name": "PF:Logs",
+      "raw_log_source": "PF:Logs",
+      "examples": [
+        {
+          "technique": "T1132.001",
+          "analytic": "AN0347",
+          "channel": "outbound flows with bytes_out >> bytes_in"
+        },
+        {
+          "technique": "T1132.002",
+          "analytic": "AN0929",
+          "channel": "high out:in ratio or fixed-size periodic flows"
+        },
+        {
+          "technique": "T1133",
+          "analytic": "AN1006",
+          "channel": "External traffic to remote access services"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_nsx_flowlogs",
+      "name": "NSX:FlowLogs",
+      "raw_log_source": "NSX:FlowLogs",
+      "examples": [
+        {
+          "technique": "T1132.001",
+          "analytic": "AN0348",
+          "channel": "network_flow: bytes_out >> bytes_in to external"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_applicationlog_api",
+      "name": "ApplicationLog:API",
+      "raw_log_source": "ApplicationLog:API",
+      "examples": [
+        {
+          "technique": "T1133",
+          "analytic": "AN1007",
+          "channel": "Docker/Kubernetes API access from external sources"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_etw_token",
+      "name": "ETW:Token",
+      "raw_log_source": "ETW:Token",
+      "examples": [
+        {
+          "technique": "T1134",
+          "analytic": "AN0786",
+          "channel": "token_analysis: API calls such as DuplicateTokenEx or ImpersonateLoggedOnUser"
+        },
+        {
+          "technique": "T1134.001",
+          "analytic": "AN1324",
+          "channel": "api_call: DuplicateTokenEx, ImpersonateLoggedOnUser, SetThreadToken"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_etw_procthread",
+      "name": "ETW:ProcThread",
+      "raw_log_source": "ETW:ProcThread",
+      "examples": [
+        {
+          "technique": "T1134.002",
+          "analytic": "AN1253",
+          "channel": "api_call: CreateProcessWithTokenW, CreateProcessAsUserW"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_etw_microsoft_windows_security_auditing",
+      "name": "etw:Microsoft-Windows-Security-Auditing",
+      "raw_log_source": "etw:Microsoft-Windows-Security-Auditing",
+      "examples": [
+        {
+          "technique": "T1134.003",
+          "analytic": "AN1375",
+          "channel": "api_call: LogonUser(A|W), LsaLogonUser, SetThreadToken, ImpersonateLoggedOnUser"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_etw_microsoft_windows_directory_services_sam",
+      "name": "etw:Microsoft-Windows-Directory-Services-SAM",
+      "raw_log_source": "etw:Microsoft-Windows-Directory-Services-SAM",
+      "examples": [
+        {
+          "technique": "T1134.005",
+          "analytic": "AN0383",
+          "channel": "api_call: Calls to DsAddSidHistory or related RPC operations"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_etw_microsoft_windows_rpc",
+      "name": "etw:Microsoft-Windows-RPC",
+      "raw_log_source": "etw:Microsoft-Windows-RPC",
+      "examples": [
+        {
+          "technique": "T1135",
+          "analytic": "AN0513",
+          "channel": "rpc_call: srvsvc.NetShareEnum / NetShareEnumAll from non-admin or unusual processes"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_zoom",
+      "name": "saas:zoom",
+      "raw_log_source": "saas:zoom",
+      "examples": [
+        {
+          "technique": "T1136.003",
+          "analytic": "AN0901",
+          "channel": "New user created"
+        },
+        {
+          "technique": "T1538",
+          "analytic": "AN0811",
+          "channel": "Zoom Admin Dashboard accessed from unfamiliar IP/device"
+        },
+        {
+          "technique": "T1552",
+          "analytic": "AN1156",
+          "channel": "unusual web session tokens and automation patterns during login"
+        },
+        {
+          "technique": "T1556.006",
+          "analytic": "AN0548",
+          "channel": "DisableMFA or RegisterNewFactor"
+        },
+        {
+          "technique": "T1684",
+          "analytic": "AN2034",
+          "channel": "Unexpected contact interaction preceding follow-on admin requests"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_m365_mailboxaudit",
+      "name": "m365:mailboxaudit",
+      "raw_log_source": "m365:mailboxaudit",
+      "examples": [
+        {
+          "technique": "T1137",
+          "analytic": "AN1117",
+          "channel": "Outlook rule creation or custom form deployment"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_microsoft_office_alerts",
+      "name": "WinEventLog:Microsoft-Office-Alerts",
+      "raw_log_source": "WinEventLog:Microsoft-Office-Alerts",
+      "examples": [
+        {
+          "technique": "T1137.001",
+          "analytic": "AN1436",
+          "channel": "Office application warning or alert on macro execution from template"
+        },
+        {
+          "technique": "T1137.002",
+          "analytic": "AN0880",
+          "channel": "Unexpected DLL or component loaded at Office startup"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_m365_office",
+      "name": "m365:office",
+      "raw_log_source": "m365:office",
+      "examples": [
+        {
+          "technique": "T1137.002",
+          "analytic": "AN0881",
+          "channel": "Startup execution includes non-default component"
+        },
+        {
+          "technique": "T1546",
+          "analytic": "AN0029",
+          "channel": "External HTTP/DNS connection from Office binary shortly after macro trigger"
+        },
+        {
+          "technique": "T1546",
+          "analytic": "AN0029",
+          "channel": "VBA auto_open, auto_close, or document_open events"
+        },
+        {
+          "technique": "T1657",
+          "analytic": "AN1365",
+          "channel": "Anomalous editing of invoice or payment document templates"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_microsoft_office_outlookaddinmonitor",
+      "name": "WinEventLog:Microsoft-Office/OutlookAddinMonitor",
+      "raw_log_source": "WinEventLog:Microsoft-Office/OutlookAddinMonitor",
+      "examples": [
+        {
+          "technique": "T1137.006",
+          "analytic": "AN0138",
+          "channel": "Outlook loading add-in via unexpected load path or non-default profile context"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_applicationlog_iis",
+      "name": "ApplicationLog:IIS",
+      "raw_log_source": "ApplicationLog:IIS",
+      "examples": [
+        {
+          "technique": "T1190",
+          "analytic": "AN0219",
+          "channel": "IIS W3C logs in C:\\inetpub\\logs\\LogFiles\\W3SVC* (spikes in 5xx, RCE/SQLi/path traversal/JNDI patterns)"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_applicationlog_webserver",
+      "name": "ApplicationLog:WebServer",
+      "raw_log_source": "ApplicationLog:WebServer",
+      "examples": [
+        {
+          "technique": "T1190",
+          "analytic": "AN0220",
+          "channel": "/var/log/httpd/access_log, /var/log/apache2/access.log, /var/log/nginx/access.log with exploit indicators and burst errors"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_applicationlog_ingress",
+      "name": "ApplicationLog:Ingress",
+      "raw_log_source": "ApplicationLog:Ingress",
+      "examples": [
+        {
+          "technique": "T1190",
+          "analytic": "AN0222",
+          "channel": "Kubernetes NGINX/Envoy ingress controller logs with anomalous payloads and 5xx spikes"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_alb_httplogs",
+      "name": "ALB:HTTPLogs",
+      "raw_log_source": "ALB:HTTPLogs",
+      "examples": [
+        {
+          "technique": "T1190",
+          "analytic": "AN0223",
+          "channel": "AWS ALB/ELB/GCP/Azure Application Gateway HTTP logs with unusual methods, long URIs, serialized payloads, 4xx/5xx bursts"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_networkdevice_controlplane",
+      "name": "networkdevice:controlplane",
+      "raw_log_source": "networkdevice:controlplane",
+      "examples": [
+        {
+          "technique": "T1190",
+          "analytic": "AN0225",
+          "channel": "Syslog from edge devices with HTTP 500s on mgmt portal, SmartInstall events, unexpected CLI commands"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_journald_package",
+      "name": "journald:package",
+      "raw_log_source": "journald:package",
+      "examples": [
+        {
+          "technique": "T1195",
+          "analytic": "AN1481",
+          "channel": "dpkg/apt install, remove, upgrade events"
+        },
+        {
+          "technique": "T1195.001",
+          "analytic": "AN0022",
+          "channel": "dpkg/apt or yum/dnf transaction logs (install/update of build tools)"
+        },
+        {
+          "technique": "T1195.002",
+          "analytic": "AN0863",
+          "channel": "dpkg/apt/yum/dnf transaction logs; vendor updaters in systemd journals"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_fwupd_logs",
+      "name": "fwupd:logs",
+      "raw_log_source": "fwupd:logs",
+      "examples": [
+        {
+          "technique": "T1195.003",
+          "analytic": "AN1036",
+          "channel": "Firmware updates applied or failed"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_googleworkspace",
+      "name": "saas:googleworkspace",
+      "raw_log_source": "saas:googleworkspace",
+      "examples": [
+        {
+          "technique": "T1199",
+          "analytic": "AN1349",
+          "channel": "OAuth2 authorization grants / Admin role assignments"
+        },
+        {
+          "technique": "T1528",
+          "analytic": "AN1427",
+          "channel": "Access via OAuth credentials with unusual scopes or from anomalous IPs"
+        },
+        {
+          "technique": "T1539",
+          "analytic": "AN1406",
+          "channel": "login with reused session token and mismatched user agent or IP"
+        },
+        {
+          "technique": "T1550",
+          "analytic": "AN0957",
+          "channel": "API access without user login"
+        },
+        {
+          "technique": "T1550",
+          "analytic": "AN0957",
+          "channel": "access_token issued"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_dhcp",
+      "name": "wineventlog:dhcp",
+      "raw_log_source": "wineventlog:dhcp",
+      "examples": [
+        {
+          "technique": "T1200",
+          "analytic": "AN0185",
+          "channel": "DHCP Lease Granted"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_macos_mdm",
+      "name": "macos:MDM",
+      "raw_log_source": "macos:MDM",
+      "examples": [
+        {
+          "technique": "T1201",
+          "analytic": "AN0457",
+          "channel": "profiles -P|getaccountpolicies"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_netflow_flow",
+      "name": "NetFlow:Flow",
+      "raw_log_source": "NetFlow:Flow",
+      "examples": [
+        {
+          "technique": "T1203",
+          "analytic": "AN0798",
+          "channel": "new outbound connections from exploited process tree"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_gcp_vpcflow",
+      "name": "gcp:vpcflow",
+      "raw_log_source": "gcp:vpcflow",
+      "examples": [
+        {
+          "technique": "T1204",
+          "analytic": "AN1318",
+          "channel": "first 5m egress to unknown ASNs"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_microsoft_windows_windows_firewall_with_advanced_security_firewall",
+      "name": "WinEventLog:Microsoft-Windows-Windows Firewall With Advanced Security/Firewall",
+      "raw_log_source": "WinEventLog:Microsoft-Windows-Windows Firewall With Advanced Security/Firewall",
+      "examples": [
+        {
+          "technique": "T1205",
+          "analytic": "AN1448",
+          "channel": "EventCode=2004, 2005, 2006"
+        },
+        {
+          "technique": "T1205.001",
+          "analytic": "AN0842",
+          "channel": "EventCode=2004, 2005, 2006"
+        },
+        {
+          "technique": "T1219.002",
+          "analytic": "AN0714",
+          "channel": "new rule allowing inbound or outbound connections for remote desktop software"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_openbsm_audittrail",
+      "name": "OpenBSM:AuditTrail",
+      "raw_log_source": "OpenBSM:AuditTrail",
+      "examples": [
+        {
+          "technique": "T1205.002",
+          "analytic": "AN0464",
+          "channel": "open/openat of /dev/bpf*; ioctl BIOCSETF-like operations."
+        },
+        {
+          "technique": "T1222.002",
+          "analytic": "AN0999",
+          "channel": "BSM audit events for file permission, ownership, and attribute modifications with user context"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_m365_dirsync",
+      "name": "m365:dirsync",
+      "raw_log_source": "m365:dirsync",
+      "examples": [
+        {
+          "technique": "T1207",
+          "analytic": "AN0770",
+          "channel": "Replication cookie changes involving Configuration partition with new server/nTDSDSA objects."
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_confluence",
+      "name": "saas:confluence",
+      "raw_log_source": "saas:confluence",
+      "examples": [
+        {
+          "technique": "T1213",
+          "analytic": "AN1162",
+          "channel": "access.content"
+        },
+        {
+          "technique": "T1213.001",
+          "analytic": "AN1019",
+          "channel": "REST API access from non-browser agents"
+        },
+        {
+          "technique": "T1213.001",
+          "analytic": "AN1019",
+          "channel": "access.content"
+        },
+        {
+          "technique": "T1213.001",
+          "analytic": "AN1019",
+          "channel": "logon"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_slack",
+      "name": "saas:slack",
+      "raw_log_source": "saas:slack",
+      "examples": [
+        {
+          "technique": "T1213",
+          "analytic": "AN1162",
+          "channel": "Exported file or accessed admin API"
+        },
+        {
+          "technique": "T1213.005",
+          "analytic": "AN1565",
+          "channel": "conversations.history, files.list, users.info, audit_logs"
+        },
+        {
+          "technique": "T1528",
+          "analytic": "AN1427",
+          "channel": "OAuth token use by unknown app client_id accessing private channels or files"
+        },
+        {
+          "technique": "T1534",
+          "analytic": "AN0150",
+          "channel": "file_upload, message_send, message_click"
+        },
+        {
+          "technique": "T1552.008",
+          "analytic": "AN0310",
+          "channel": "chat.postMessage, files.upload, or discovery API calls involving token/credential regex"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_github",
+      "name": "saas:github",
+      "raw_log_source": "saas:github",
+      "examples": [
+        {
+          "technique": "T1213.003",
+          "analytic": "AN0732",
+          "channel": "Bulk access to multiple files or large volume of repo requests within short time window"
+        },
+        {
+          "technique": "T1213.003",
+          "analytic": "AN0732",
+          "channel": "Login from unusual IP, device fingerprint, or location; access token creation from new client"
+        },
+        {
+          "technique": "T1213.003",
+          "analytic": "AN0732",
+          "channel": "repo.download, repo.clone, oauth.authorize, repo.getContent"
+        },
+        {
+          "technique": "T1677",
+          "analytic": "AN1473",
+          "channel": "Artifact generated includes base64/encoded exfil payload or URL"
+        },
+        {
+          "technique": "T1677",
+          "analytic": "AN1473",
+          "channel": "CI/CD secret accessed or exported"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_snowflake",
+      "name": "saas:Snowflake",
+      "raw_log_source": "saas:Snowflake",
+      "examples": [
+        {
+          "technique": "T1213.006",
+          "analytic": "AN0680",
+          "channel": "QUERY: Large or repeated SELECT * queries to sensitive tables"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_microsoft_windows_com_operational",
+      "name": "WinEventLog:Microsoft-Windows-COM/Operational",
+      "raw_log_source": "WinEventLog:Microsoft-Windows-COM/Operational",
+      "examples": [
+        {
+          "technique": "T1218.014",
+          "analytic": "AN0622",
+          "channel": "CLSID activation events where ProcessName=mmc.exe and CLSID not in allowed baseline"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_auditd_proctitle",
+      "name": "auditd:PROCTITLE",
+      "raw_log_source": "auditd:PROCTITLE",
+      "examples": [
+        {
+          "technique": "T1222",
+          "analytic": "AN0835",
+          "channel": "proctitle contains chmod, chown, setfacl, or attr commands with suspicious parameters"
+        },
+        {
+          "technique": "T1222.002",
+          "analytic": "AN0998",
+          "channel": "proctitle contains chmod, chown, chgrp, setfacl, or attr with suspicious parameters (777, 755, +x, -R)"
+        },
+        {
+          "technique": "T1480",
+          "analytic": "AN1552",
+          "channel": "command-line execution patterns for system discovery utilities (uname, hostname, ifconfig, netstat, lsof, ps, mount)"
+        },
+        {
+          "technique": "T1678",
+          "analytic": "AN1049",
+          "channel": "scripting loop invoking sleep/ping"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_microsoft_windows_backup",
+      "name": "WinEventLog:Microsoft-Windows-Backup",
+      "raw_log_source": "WinEventLog:Microsoft-Windows-Backup",
+      "examples": [
+        {
+          "technique": "T1490",
+          "analytic": "AN0933",
+          "channel": "Windows Backup Catalog deletion or catalog corruption"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_apache_access_log",
+      "name": "apache:access_log",
+      "raw_log_source": "apache:access_log",
+      "examples": [
+        {
+          "technique": "T1491",
+          "analytic": "AN0663",
+          "channel": "Unusual HTTP POST or PUT requests to paths such as '/uploads/', '/admin/', or CMS plugin folders"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_cloudtrail_putobject",
+      "name": "CloudTrail:PutObject",
+      "raw_log_source": "CloudTrail:PutObject",
+      "examples": [
+        {
+          "technique": "T1491",
+          "analytic": "AN0666",
+          "channel": "PutObject"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_esxilogs_messages",
+      "name": "ESXiLogs:messages",
+      "raw_log_source": "ESXiLogs:messages",
+      "examples": [
+        {
+          "technique": "T1491.001",
+          "analytic": "AN0232",
+          "channel": "changes to /etc/motd or /etc/vmware/welcome"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_microsoft_windows_kernel_boot",
+      "name": "WinEventLog:Microsoft-Windows-Kernel-Boot",
+      "raw_log_source": "WinEventLog:Microsoft-Windows-Kernel-Boot",
+      "examples": [
+        {
+          "technique": "T1495",
+          "analytic": "AN0474",
+          "channel": "Firmware integrity validation failed or boot configuration tampered"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_networkdevice_firmware",
+      "name": "networkdevice:firmware",
+      "raw_log_source": "networkdevice:firmware",
+      "examples": [
+        {
+          "technique": "T1495",
+          "analytic": "AN0477",
+          "channel": "Firmware update initiated or bootloader tampering detected"
+        },
+        {
+          "technique": "T1542",
+          "analytic": "AN0777",
+          "channel": "Unexpected firmware image upload events via TFTP/FTP/SCP"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_windows_perfmon",
+      "name": "Windows:perfmon",
+      "raw_log_source": "Windows:perfmon",
+      "examples": [
+        {
+          "technique": "T1496",
+          "analytic": "AN0741",
+          "channel": "High sustained CPU usage by a single process"
+        },
+        {
+          "technique": "T1498.002",
+          "analytic": "AN1140",
+          "channel": "Sudden spike in outbound throughput without corresponding inbound traffic"
+        },
+        {
+          "technique": "T1499.002",
+          "analytic": "AN0489",
+          "channel": "Sustained CPU/memory exhaustion by service process (e.g., w3wp.exe)"
+        },
+        {
+          "technique": "T1499.003",
+          "analytic": "AN1165",
+          "channel": "Sudden spikes in CPU/Memory usage linked to specific application processes"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_aws_cloudwatch",
+      "name": "AWS:CloudWatch",
+      "raw_log_source": "AWS:CloudWatch",
+      "examples": [
+        {
+          "technique": "T1496",
+          "analytic": "AN0744",
+          "channel": "Sustained EC2 CPU usage above normal baseline"
+        },
+        {
+          "technique": "T1496.001",
+          "analytic": "AN1493",
+          "channel": "Unusual CPU burst or metric anomalies"
+        },
+        {
+          "technique": "T1498.001",
+          "analytic": "AN0972",
+          "channel": "NetworkOut spike beyond baseline"
+        },
+        {
+          "technique": "T1498.002",
+          "analytic": "AN1143",
+          "channel": "Sudden spike in network output without a corresponding inbound request ratio"
+        },
+        {
+          "technique": "T1499",
+          "analytic": "AN0587",
+          "channel": "StatusCheckFailed or StatusCheckFailed_System for burstable instances (t2/t3)"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_container_cni",
+      "name": "container:cni",
+      "raw_log_source": "container:cni",
+      "examples": [
+        {
+          "technique": "T1496",
+          "analytic": "AN0745",
+          "channel": "Outbound network traffic to mining proxies"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_prometheus_metrics",
+      "name": "prometheus:metrics",
+      "raw_log_source": "prometheus:metrics",
+      "examples": [
+        {
+          "technique": "T1496",
+          "analytic": "AN0745",
+          "channel": "Container CPU/Memory usage exceeding threshold"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_application",
+      "name": "saas:application",
+      "raw_log_source": "saas:application",
+      "examples": [
+        {
+          "technique": "T1496",
+          "analytic": "AN0746",
+          "channel": "High-volume API calls or traffic via messaging or webhook service"
+        },
+        {
+          "technique": "T1496.003",
+          "analytic": "AN0443",
+          "channel": "High-frequency invocation of SMS-related API endpoints from publicly accessible OTP or verification forms (e.g., Twilio: SendMessage, Cognito: AdminCreateUser) with irregular destination patterns."
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_containers_osquery",
+      "name": "containers:osquery",
+      "raw_log_source": "containers:osquery",
+      "examples": [
+        {
+          "technique": "T1496.002",
+          "analytic": "AN0083",
+          "channel": "bandwidth-intensive command execution from within a container namespace"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_docker_stats",
+      "name": "docker:stats",
+      "raw_log_source": "docker:stats",
+      "examples": [
+        {
+          "technique": "T1496.002",
+          "analytic": "AN0083",
+          "channel": "unusual network TX/RX byte deltas"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_audit",
+      "name": "saas:audit",
+      "raw_log_source": "saas:audit",
+      "examples": [
+        {
+          "technique": "T1496.003",
+          "analytic": "AN0443",
+          "channel": "Repeated requests to SMS-generating endpoints using anomalous or new user agents, IP ranges, or geographies."
+        },
+        {
+          "technique": "T1671",
+          "analytic": "AN1488",
+          "channel": "Application added or consent granted: Integration persisting after original user disabled"
+        },
+        {
+          "technique": "T1685.002",
+          "analytic": "AN0804",
+          "channel": "Log export integration removed or disabled"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_sar_network",
+      "name": "sar:network",
+      "raw_log_source": "sar:network",
+      "examples": [
+        {
+          "technique": "T1498.002",
+          "analytic": "AN1141",
+          "channel": "Outbound network saturation with minimal process activity"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_vpcflowlogs_all",
+      "name": "VPCFlowLogs:All",
+      "raw_log_source": "VPCFlowLogs:All",
+      "examples": [
+        {
+          "technique": "T1499",
+          "analytic": "AN0587",
+          "channel": "High volume internal traffic with low entropy indicating looped or malicious DoS script"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_microsoft_windows_tcpip",
+      "name": "WinEventLog:Microsoft-Windows-TCPIP",
+      "raw_log_source": "WinEventLog:Microsoft-Windows-TCPIP",
+      "examples": [
+        {
+          "technique": "T1499.001",
+          "analytic": "AN1012",
+          "channel": "Connection queue overflow or failure to allocate TCP state object"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_aws_cloudmetrics",
+      "name": "AWS:CloudMetrics",
+      "raw_log_source": "AWS:CloudMetrics",
+      "examples": [
+        {
+          "technique": "T1499.003",
+          "analytic": "AN1168",
+          "channel": "Autoscaling, memory/cpu alarms, or instance unhealthiness"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_journald_application",
+      "name": "journald:Application",
+      "raw_log_source": "journald:Application",
+      "examples": [
+        {
+          "technique": "T1499.004",
+          "analytic": "AN0851",
+          "channel": "Segfault or crash log entry associated with specific application binary"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_applicationlogs_sql",
+      "name": "ApplicationLogs:SQL",
+      "raw_log_source": "ApplicationLogs:SQL",
+      "examples": [
+        {
+          "technique": "T1505.001",
+          "analytic": "AN0512",
+          "channel": "Stored procedure creation or modification with shell invocation (e.g., system(), exec())"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_microsoft_iis_configuration",
+      "name": "WinEventLog:Microsoft-IIS-Configuration",
+      "raw_log_source": "WinEventLog:Microsoft-IIS-Configuration",
+      "examples": [
+        {
+          "technique": "T1505.004",
+          "analytic": "AN0184",
+          "channel": "Module or ISAPI filter registration events"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_linux_fim",
+      "name": "linux:fim",
+      "raw_log_source": "linux:fim",
+      "examples": [
+        {
+          "technique": "T1505.006",
+          "analytic": "AN1475",
+          "channel": "Changes to /etc/rc.local.d/local.sh or creation of unexpected startup files in persistent partitions (/etc/init.d, /store, /locker)"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_linux_shell",
+      "name": "linux:shell",
+      "raw_log_source": "linux:shell",
+      "examples": [
+        {
+          "technique": "T1518",
+          "analytic": "AN1101",
+          "channel": "Manual invocation of software enumeration commands via interactive shell"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_docker_registry",
+      "name": "docker:registry",
+      "raw_log_source": "docker:registry",
+      "examples": [
+        {
+          "technique": "T1525",
+          "analytic": "AN0946",
+          "channel": "push event of new image version from unrecognized user or context"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_adminapi",
+      "name": "saas:adminapi",
+      "raw_log_source": "saas:adminapi",
+      "examples": [
+        {
+          "technique": "T1526",
+          "analytic": "AN1130",
+          "channel": "ListIntegrations, ListServices: Repeated service discovery requests from accounts without administrative responsibilities"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_application_mail",
+      "name": "Application:Mail",
+      "raw_log_source": "Application:Mail",
+      "examples": [
+        {
+          "technique": "T1534",
+          "analytic": "AN0148",
+          "channel": "smtpd$.*$: .*from=[.*@internaldomain.com](mailto:.*@internaldomain.com) to=[.*@internaldomain.com](mailto:.*@internaldomain.com)"
+        },
+        {
+          "technique": "T1566",
+          "analytic": "AN0189",
+          "channel": "Inbound messages with anomalous headers, spoofed SPF/DKIM failures"
+        },
+        {
+          "technique": "T1566.001",
+          "analytic": "AN0656",
+          "channel": "Inbound email attachments logged from MTAs with suspicious metadata"
+        },
+        {
+          "technique": "T1566.002",
+          "analytic": "AN0299",
+          "channel": "Inbound emails containing hyperlinks from suspicious sources"
+        },
+        {
+          "technique": "T1667",
+          "analytic": "AN1009",
+          "channel": "High-frequency inbound mail activity to a specific recipient address"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_cloudtrail_getcalleridentity",
+      "name": "CloudTrail:GetCallerIdentity",
+      "raw_log_source": "CloudTrail:GetCallerIdentity",
+      "examples": [
+        {
+          "technique": "T1535",
+          "analytic": "AN0690",
+          "channel": "GetCallerIdentity"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_box",
+      "name": "saas:box",
+      "raw_log_source": "saas:box",
+      "examples": [
+        {
+          "technique": "T1537",
+          "analytic": "AN1582",
+          "channel": "collaboration.invite"
+        },
+        {
+          "technique": "T1538",
+          "analytic": "AN0811",
+          "channel": "User navigated to admin interface"
+        },
+        {
+          "technique": "T1567",
+          "analytic": "AN1514",
+          "channel": "API calls exceeding baseline thresholds"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_googledrive",
+      "name": "saas:googledrive",
+      "raw_log_source": "saas:googledrive",
+      "examples": [
+        {
+          "technique": "T1537",
+          "analytic": "AN1582",
+          "channel": "drive.permission.add"
+        },
+        {
+          "technique": "T1648",
+          "analytic": "AN1055",
+          "channel": "FileOpen / FileAccess: Event-driven script triggering on user file actions"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_firmware_integrity",
+      "name": "firmware:integrity",
+      "raw_log_source": "firmware:integrity",
+      "examples": [
+        {
+          "technique": "T1542.002",
+          "analytic": "AN0916",
+          "channel": "Firmware integrity verification failures or mismatches against expected UEFI/firmware image baselines"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_fs_launchdaemons",
+      "name": "fs:launchdaemons",
+      "raw_log_source": "fs:launchdaemons",
+      "examples": [
+        {
+          "technique": "T1543.004",
+          "analytic": "AN1126",
+          "channel": "file_create"
+        },
+        {
+          "technique": "T1543.004",
+          "analytic": "AN1126",
+          "channel": "file_modify"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_systemd_unit",
+      "name": "systemd:unit",
+      "raw_log_source": "systemd:unit",
+      "examples": [
+        {
+          "technique": "T1543.005",
+          "analytic": "AN1304",
+          "channel": "container run with restart policy set to 'always' or 'unless-stopped'"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_microsoft_windows_shell_core",
+      "name": "WinEventLog:Microsoft-Windows-Shell-Core",
+      "raw_log_source": "WinEventLog:Microsoft-Windows-Shell-Core",
+      "examples": [
+        {
+          "technique": "T1547.001",
+          "analytic": "AN1032",
+          "channel": "New startup folder shortcut or binary placed in Startup directory"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_autoruns_registryscan",
+      "name": "Autoruns:RegistryScan",
+      "raw_log_source": "Autoruns:RegistryScan",
+      "examples": [
+        {
+          "technique": "T1547.004",
+          "analytic": "AN1133",
+          "channel": "Enumerate Winlogon subkeys for unknown or unsigned binaries"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_fs_filesystem",
+      "name": "fs:filesystem",
+      "raw_log_source": "fs:filesystem",
+      "examples": [
+        {
+          "technique": "T1547.007",
+          "analytic": "AN0349",
+          "channel": "Modification or creation of files matching 'com.apple.loginwindow.*.plist' in ~/Library/Preferences/ByHost"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_gcp_iam",
+      "name": "gcp:iam",
+      "raw_log_source": "gcp:iam",
+      "examples": [
+        {
+          "technique": "T1548.005",
+          "analytic": "AN1106",
+          "channel": "PrincipalEmail with serviceAccountTokenCreator impersonating new identity"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_docker_runtime",
+      "name": "docker:runtime",
+      "raw_log_source": "docker:runtime",
+      "examples": [
+        {
+          "technique": "T1550",
+          "analytic": "AN0958",
+          "channel": "execution of cloud CLI tool (e.g., aws, az) inside container"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_cni_netflow",
+      "name": "cni:netflow",
+      "raw_log_source": "cni:netflow",
+      "examples": [
+        {
+          "technique": "T1552.001",
+          "analytic": "AN0859",
+          "channel": "outbound connection to internal or external APIs"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_cloudtrail_getobject",
+      "name": "CloudTrail:GetObject",
+      "raw_log_source": "CloudTrail:GetObject",
+      "examples": [
+        {
+          "technique": "T1552.001",
+          "analytic": "AN0860",
+          "channel": "sensitive credential files in buckets or local image storage"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_docker_api",
+      "name": "docker:api",
+      "raw_log_source": "docker:api",
+      "examples": [
+        {
+          "technique": "T1552.007",
+          "analytic": "AN0571",
+          "channel": "docker logs access or container inspect commands from non-administrative users"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_kubernetes_orchestrator",
+      "name": "kubernetes:orchestrator",
+      "raw_log_source": "kubernetes:orchestrator",
+      "examples": [
+        {
+          "technique": "T1552.007",
+          "analytic": "AN0571",
+          "channel": "Access to orchestrator logs containing credentials (Docker/Kubernetes logs)"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_codeintegrity",
+      "name": "WinEventLog:CodeIntegrity",
+      "raw_log_source": "WinEventLog:CodeIntegrity",
+      "examples": [
+        {
+          "technique": "T1553.003",
+          "analytic": "AN1222",
+          "channel": "EventCode=3033"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_auditd_file",
+      "name": "auditd:FILE",
+      "raw_log_source": "auditd:FILE",
+      "examples": [
+        {
+          "technique": "T1555.002",
+          "analytic": "AN0157",
+          "channel": "/proc/*/mem read attempt"
+        },
+        {
+          "technique": "T1555.003",
+          "analytic": "AN0106",
+          "channel": "/home/*/.mozilla/firefox/*/logins.json OR /home/*/.config/google-chrome/*/Login Data"
+        },
+        {
+          "technique": "T1560",
+          "analytic": "AN1459",
+          "channel": "create: Creation of files ending in .tar, .gz, .bz2, .zip in /tmp or /var/tmp"
+        },
+        {
+          "technique": "T1560.001",
+          "analytic": "AN0832",
+          "channel": "create: Creation of archive files in /tmp, /var/tmp, or user home directories"
+        },
+        {
+          "technique": "T1560.002",
+          "analytic": "AN0748",
+          "channel": "create: Creation of .zip, .gz, .bz2 files in /tmp, /var/tmp, or /home directories"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_azure_policy",
+      "name": "azure:policy",
+      "raw_log_source": "azure:policy",
+      "examples": [
+        {
+          "technique": "T1556",
+          "analytic": "AN0290",
+          "channel": "UpdatePolicy"
+        },
+        {
+          "technique": "T1685.002",
+          "analytic": "AN0802",
+          "channel": "DisableAuditLogs or ConditionalAccess logging changes"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_network_auth",
+      "name": "network:auth",
+      "raw_log_source": "network:auth",
+      "examples": [
+        {
+          "technique": "T1556.004",
+          "analytic": "AN0758",
+          "channel": "repeated successful authentications with previously unknown accounts or anomalous password acceptance"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wlanlogs_association",
+      "name": "WLANLogs:Association",
+      "raw_log_source": "WLANLogs:Association",
+      "examples": [
+        {
+          "technique": "T1557.004",
+          "analytic": "AN1069",
+          "channel": "Multiple APs advertising the same SSID but with different BSSID/MAC or encryption type"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_kerberos",
+      "name": "WinEventLog:Kerberos",
+      "raw_log_source": "WinEventLog:Kerberos",
+      "examples": [
+        {
+          "technique": "T1558.002",
+          "analytic": "AN0675",
+          "channel": "Kerberos TGS-REQ anomalies without KDC validation (Silver Ticket behavior)"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_auditd_mmap",
+      "name": "auditd:MMAP",
+      "raw_log_source": "auditd:MMAP",
+      "examples": [
+        {
+          "technique": "T1560.002",
+          "analytic": "AN0748",
+          "channel": "load: Loading of libzip.so, libz.so, or libbz2.so by processes not normally associated with archiving"
+        },
+        {
+          "technique": "T1620",
+          "analytic": "AN0839",
+          "channel": "memory region with RWX permissions allocated"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_etw_microsoft_windows_kernel_file",
+      "name": "etw:Microsoft-Windows-Kernel-File",
+      "raw_log_source": "etw:Microsoft-Windows-Kernel-File",
+      "examples": [
+        {
+          "technique": "T1564.004",
+          "analytic": "AN1206",
+          "channel": "ZwSetEaFile or ZwQueryEaFile function calls"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_etw_microsoft_windows_kernel_storage",
+      "name": "etw:Microsoft-Windows-Kernel-Storage",
+      "raw_log_source": "etw:Microsoft-Windows-Kernel-Storage",
+      "examples": [
+        {
+          "technique": "T1564.005",
+          "analytic": "AN1271",
+          "channel": "Raw disk I/O operations bypassing NTFS APIs"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_applicationlog_mailserver",
+      "name": "ApplicationLog:MailServer",
+      "raw_log_source": "ApplicationLog:MailServer",
+      "examples": [
+        {
+          "technique": "T1564.008",
+          "analytic": "AN0553",
+          "channel": "Unexpected additions of sieve rules or filtering directives"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_collaboration",
+      "name": "saas:collaboration",
+      "raw_log_source": "saas:collaboration",
+      "examples": [
+        {
+          "technique": "T1566",
+          "analytic": "AN0193",
+          "channel": "MessagePosted: Suspicious links or attachment delivery via collaboration tools (Slack, Teams, Zoom)"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_applicationlog_callrecords",
+      "name": "ApplicationLog:CallRecords",
+      "raw_log_source": "ApplicationLog:CallRecords",
+      "examples": [
+        {
+          "technique": "T1566.004",
+          "analytic": "AN0683",
+          "channel": "Outbound or inbound calls to high-risk or blocklisted numbers"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_api",
+      "name": "saas:api",
+      "raw_log_source": "saas:api",
+      "examples": [
+        {
+          "technique": "T1567.004",
+          "analytic": "AN0440",
+          "channel": "Webhook registrations or repeated POST activity"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_esxcli_network",
+      "name": "esxcli:network",
+      "raw_log_source": "esxcli:network",
+      "examples": [
+        {
+          "technique": "T1571",
+          "analytic": "AN0636",
+          "channel": "listening sockets bound to non-standard ports"
+        },
+        {
+          "technique": "T1572",
+          "analytic": "AN1486",
+          "channel": "listening sockets bound with non-standard encapsulated protocols"
+        },
+        {
+          "technique": "T1573.001",
+          "analytic": "AN0403",
+          "channel": "Socket sessions with randomized payloads inconsistent with TLS"
+        },
+        {
+          "technique": "T1573.002",
+          "analytic": "AN1499",
+          "channel": "Socket inspection showing RSA key exchange outside baseline endpoints"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_ids_tlsinspection",
+      "name": "IDS:TLSInspection",
+      "raw_log_source": "IDS:TLSInspection",
+      "examples": [
+        {
+          "technique": "T1573.002",
+          "analytic": "AN1500",
+          "channel": "Malformed certs, incomplete asymmetric handshakes, or invalid CAs"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_domain_name",
+      "name": "Domain Name",
+      "raw_log_source": "Domain Name",
+      "examples": [
+        {
+          "technique": "T1583",
+          "analytic": "AN2027",
+          "channel": "None"
+        },
+        {
+          "technique": "T1583",
+          "analytic": "AN2027",
+          "channel": "None"
+        },
+        {
+          "technique": "T1583",
+          "analytic": "AN2027",
+          "channel": "None"
+        },
+        {
+          "technique": "T1583.001",
+          "analytic": "AN2024",
+          "channel": "None"
+        },
+        {
+          "technique": "T1583.001",
+          "analytic": "AN2024",
+          "channel": "None"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_internet_scan",
+      "name": "Internet Scan",
+      "raw_log_source": "Internet Scan",
+      "examples": [
+        {
+          "technique": "T1583",
+          "analytic": "AN2027",
+          "channel": "None"
+        },
+        {
+          "technique": "T1583",
+          "analytic": "AN2027",
+          "channel": "None"
+        },
+        {
+          "technique": "T1583.003",
+          "analytic": "AN1970",
+          "channel": "None"
+        },
+        {
+          "technique": "T1583.003",
+          "analytic": "AN1970",
+          "channel": "None"
+        },
+        {
+          "technique": "T1583.004",
+          "analytic": "AN2003",
+          "channel": "None"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_persona",
+      "name": "Persona",
+      "raw_log_source": "Persona",
+      "examples": [
+        {
+          "technique": "T1585",
+          "analytic": "AN2005",
+          "channel": "None"
+        },
+        {
+          "technique": "T1585.001",
+          "analytic": "AN1983",
+          "channel": "None"
+        },
+        {
+          "technique": "T1586",
+          "analytic": "AN2008",
+          "channel": "None"
+        },
+        {
+          "technique": "T1586.001",
+          "analytic": "AN2002",
+          "channel": "None"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_malware_repository",
+      "name": "Malware Repository",
+      "raw_log_source": "Malware Repository",
+      "examples": [
+        {
+          "technique": "T1587",
+          "analytic": "AN1985",
+          "channel": "None"
+        },
+        {
+          "technique": "T1587",
+          "analytic": "AN1985",
+          "channel": "None"
+        },
+        {
+          "technique": "T1587.001",
+          "analytic": "AN2004",
+          "channel": "None"
+        },
+        {
+          "technique": "T1587.001",
+          "analytic": "AN2004",
+          "channel": "None"
+        },
+        {
+          "technique": "T1587.002",
+          "analytic": "AN1965",
+          "channel": "None"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_certificate",
+      "name": "Certificate",
+      "raw_log_source": "Certificate",
+      "examples": [
+        {
+          "technique": "T1588",
+          "analytic": "AN1982",
+          "channel": "None"
+        },
+        {
+          "technique": "T1588.004",
+          "analytic": "AN1980",
+          "channel": "None"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_application_log",
+      "name": "Application Log",
+      "raw_log_source": "Application Log",
+      "examples": [
+        {
+          "technique": "T1594",
+          "analytic": "AN1942",
+          "channel": "None"
+        },
+        {
+          "technique": "T1598",
+          "analytic": "AN1955",
+          "channel": "None"
+        },
+        {
+          "technique": "T1598.001",
+          "analytic": "AN1953",
+          "channel": "None"
+        },
+        {
+          "technique": "T1598.002",
+          "analytic": "AN1997",
+          "channel": "None"
+        },
+        {
+          "technique": "T1598.003",
+          "analytic": "AN2010",
+          "channel": "None"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_snmp_status",
+      "name": "snmp:status",
+      "raw_log_source": "snmp:status",
+      "examples": [
+        {
+          "technique": "T1600",
+          "analytic": "AN0961",
+          "channel": "Status change in cryptographic hardware modules (enabled -> disabled)"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_firmware_runtime",
+      "name": "firmware:runtime",
+      "raw_log_source": "firmware:runtime",
+      "examples": [
+        {
+          "technique": "T1601.001",
+          "analytic": "AN1293",
+          "channel": "Debug or memory access commands indicating attempts to alter OS instructions in memory"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_networkdevice_audit",
+      "name": "networkdevice:audit",
+      "raw_log_source": "networkdevice:audit",
+      "examples": [
+        {
+          "technique": "T1602.001",
+          "analytic": "AN1249",
+          "channel": "SNMP configuration changes, such as enabling read/write access or modifying community strings"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_snmp_access",
+      "name": "snmp:access",
+      "raw_log_source": "snmp:access",
+      "examples": [
+        {
+          "technique": "T1602.002",
+          "analytic": "AN0647",
+          "channel": "GETBULK/GETNEXT requests for OIDs associated with configuration parameters"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_m365_oauth",
+      "name": "m365:oauth",
+      "raw_log_source": "m365:oauth",
+      "examples": [
+        {
+          "technique": "T1606",
+          "analytic": "AN0723",
+          "channel": "OAuth grants or tokens issued without expected user consent"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_access",
+      "name": "saas:access",
+      "raw_log_source": "saas:access",
+      "examples": [
+        {
+          "technique": "T1606.001",
+          "analytic": "AN0487",
+          "channel": "Multiple concurrent logins using same cookie from different locations"
+        },
+        {
+          "technique": "T1606.002",
+          "analytic": "AN0421",
+          "channel": "SAML token accepted without preceding login challenge"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_cloudtrail_signin",
+      "name": "CloudTrail:Signin",
+      "raw_log_source": "CloudTrail:Signin",
+      "examples": [
+        {
+          "technique": "T1606.002",
+          "analytic": "AN0419",
+          "channel": "SAML login without corresponding IdP authentication log"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_adfs",
+      "name": "WinEventLog:ADFS",
+      "raw_log_source": "WinEventLog:ADFS",
+      "examples": [
+        {
+          "technique": "T1606.002",
+          "analytic": "AN0420",
+          "channel": "Token issuance events showing anomalous claims or issuers"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_etw_microsoft_windows_kernel_base",
+      "name": "etw:Microsoft-Windows-Kernel-Base",
+      "raw_log_source": "etw:Microsoft-Windows-Kernel-Base",
+      "examples": [
+        {
+          "technique": "T1614",
+          "analytic": "AN0119",
+          "channel": "GetLocaleInfoW, GetTimeZoneInformation API calls"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_azure_vpcflow",
+      "name": "azure:vpcflow",
+      "raw_log_source": "azure:vpcflow",
+      "examples": [
+        {
+          "technique": "T1614",
+          "analytic": "AN0122",
+          "channel": "HTTP requests to 169.254.169.254 or Azure Metadata endpoints"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_etw",
+      "name": "ETW",
+      "raw_log_source": "ETW",
+      "examples": [
+        {
+          "technique": "T1614.001",
+          "analytic": "AN1561",
+          "channel": "Calls to GetUserDefaultUILanguage, GetSystemDefaultUILanguage, GetKeyboardLayoutList"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_etw_microsoft_antimalware_scan_interface",
+      "name": "etw:Microsoft-Antimalware-Scan-Interface",
+      "raw_log_source": "etw:Microsoft-Antimalware-Scan-Interface",
+      "examples": [
+        {
+          "technique": "T1620",
+          "analytic": "AN0838",
+          "channel": "Amsi/Script content + API verdicts during in-memory staging"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_etw_microsoft_windows_dotnetruntime",
+      "name": "etw:Microsoft-Windows-DotNETRuntime",
+      "raw_log_source": "etw:Microsoft-Windows-DotNETRuntime",
+      "examples": [
+        {
+          "technique": "T1620",
+          "analytic": "AN0838",
+          "channel": "AssemblyLoad/ModuleLoad (Loader keyword) from Microsoft-Windows-DotNETRuntime"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_auditd_auth",
+      "name": "auditd:AUTH",
+      "raw_log_source": "auditd:AUTH",
+      "examples": [
+        {
+          "technique": "T1621",
+          "analytic": "AN0452",
+          "channel": "pam_unix or pam_google_authenticator invoked repeatedly within short interval"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_appsscript",
+      "name": "saas:appsscript",
+      "raw_log_source": "saas:appsscript",
+      "examples": [
+        {
+          "technique": "T1648",
+          "analytic": "AN1055",
+          "channel": "Create / Update: Deployment of scripts with event-driven triggers"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_azure_vmguest",
+      "name": "azure:vmguest",
+      "raw_log_source": "azure:vmguest",
+      "examples": [
+        {
+          "technique": "T1651",
+          "analytic": "AN1502",
+          "channel": "Unexpected execution of cloud agent processes (e.g., WindowsAzureGuestAgent.exe, ssm-agent) followed by arbitrary script or binary execution"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_auditd_fs",
+      "name": "auditd:FS",
+      "raw_log_source": "auditd:FS",
+      "examples": [
+        {
+          "technique": "T1652",
+          "analytic": "AN1596",
+          "channel": "read: File access to /proc/modules or /sys/module/"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_finance",
+      "name": "saas:finance",
+      "raw_log_source": "saas:finance",
+      "examples": [
+        {
+          "technique": "T1657",
+          "analytic": "AN1364",
+          "channel": "Transaction/Transfer: Unusual or large transactions initiated outside business hours or by unusual accounts"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wineventlog_microsoft_windows_wlan_autoconfig",
+      "name": "WinEventLog:Microsoft-Windows-WLAN-AutoConfig",
+      "raw_log_source": "WinEventLog:Microsoft-Windows-WLAN-AutoConfig",
+      "examples": [
+        {
+          "technique": "T1669",
+          "analytic": "AN1476",
+          "channel": "EventCode=8001, 8002, 8003"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_wids_associationlogs",
+      "name": "WIDS:AssociationLogs",
+      "raw_log_source": "WIDS:AssociationLogs",
+      "examples": [
+        {
+          "technique": "T1669",
+          "analytic": "AN1479",
+          "channel": "Unauthorized AP or anomalous MAC address connection attempts"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_integration",
+      "name": "saas:integration",
+      "raw_log_source": "saas:integration",
+      "examples": [
+        {
+          "technique": "T1671",
+          "analytic": "AN1488",
+          "channel": "New or modified third-party application integrations with elevated permissions"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_prmetadata",
+      "name": "saas:PRMetadata",
+      "raw_log_source": "saas:PRMetadata",
+      "examples": [
+        {
+          "technique": "T1677",
+          "analytic": "AN1473",
+          "channel": "Commit message or branch name contains encoded strings or payload indicators"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_repoevents",
+      "name": "saas:RepoEvents",
+      "raw_log_source": "saas:RepoEvents",
+      "examples": [
+        {
+          "technique": "T1677",
+          "analytic": "AN1473",
+          "channel": "New file added or modified in PR targeting CI/CD or build config (e.g., `gitlab-ci.yml`, `build.gradle`, `pom.xml`, `.github/workflows/*.yml`)"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_m365_teams",
+      "name": "m365:teams",
+      "raw_log_source": "m365:teams",
+      "examples": [
+        {
+          "technique": "T1684",
+          "analytic": "AN2033",
+          "channel": "External chat request or new tenant communication preceding approval activity"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_saas_email",
+      "name": "saas:email",
+      "raw_log_source": "saas:email",
+      "examples": [
+        {
+          "technique": "T1684.002",
+          "analytic": "AN1205",
+          "channel": "AuthenticationFailures (SPF/DKIM/DMARC) OR Domain Mismatch"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_gcp_config",
+      "name": "gcp:config",
+      "raw_log_source": "gcp:config",
+      "examples": [
+        {
+          "technique": "T1685.002",
+          "analytic": "AN0801",
+          "channel": "UpdateSink request modifying log export destinations"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_networkdevice_firewall",
+      "name": "networkdevice:Firewall",
+      "raw_log_source": "networkdevice:Firewall",
+      "examples": [
+        {
+          "technique": "T1686.002",
+          "analytic": "AN0855",
+          "channel": "Audit trail or CLI/API access indicating commands like no access-list, delete rule-set, clear config"
+        },
+        {
+          "technique": "T1686.002",
+          "analytic": "AN0855",
+          "channel": "Login from untrusted IP, or new admin account accessing firewall console/API"
+        },
+        {
+          "technique": "T1686.002",
+          "analytic": "AN0855",
+          "channel": "update_rule: Access control or NAT rule modified or disabled outside maintenance window"
+        }
+      ]
+    },
+    {
+      "suggested_id": "attck_auditd_daemon",
+      "name": "auditd:DAEMON",
+      "raw_log_source": "auditd:DAEMON",
+      "examples": [
+        {
+          "technique": "T1687",
+          "analytic": "AN2039",
+          "channel": "auditd stopped, config changed, logging suspended"
+        }
+      ]
+    }
+  ],
+  "unknown_log_source_count": 258,
+  "output": "C:\\Users\\freid\\Downloads\\attack-telemetry-planner-scraper\\attack-telemetry-planner\\data\\generated\\techniques_scraped.yml",
+  "raw_output": "C:\\Users\\freid\\Downloads\\attack-telemetry-planner-scraper\\attack-telemetry-planner\\data\\generated\\telemetry_records.json"
+}

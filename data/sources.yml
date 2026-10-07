@@ -1,0 +1,29 @@
+- id: windows_security
+  name: Windows Security
+  category: Windows
+  cost: 1
+  description: Authentication and security auditing events, e.g. logon successes/failures.
+
+- id: sysmon
+  name: Sysmon
+  category: Windows
+  cost: 2
+  description: Detailed process, network connection and file telemetry from Windows hosts.
+
+- id: powershell_scriptblock
+  name: PowerShell Script Block Logging
+  category: Windows
+  cost: 2
+  description: PowerShell command/script execution telemetry, including Script Block Logging.
+
+- id: zeek_conn
+  name: Zeek conn.log
+  category: Network
+  cost: 3
+  description: Network connection metadata, useful for flow-oriented visibility and context.
+
+- id: zeek_dns
+  name: Zeek dns.log
+  category: Network
+  cost: 2
+  description: DNS request/response metadata, useful for DNS-based command-and-control visibility.

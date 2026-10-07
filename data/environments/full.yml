@@ -1,0 +1,9 @@
+id: full
+name: Full
+enabled_sources:
+  - windows_security
+  - sysmon
+  - powershell_scriptblock
+  - zeek_conn
+  - zeek_dns
+description: "All MVP telemetry sources"

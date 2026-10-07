@@ -1,0 +1,79 @@
+# Demo knowledge base for the MVP.
+# Each mapping should be re-checked against the exact ATT&CK release used in the report.
+- id: T1059.001
+  name: PowerShell
+  tactic: Execution
+  sources:
+    - id: powershell_scriptblock
+      role: primary
+      why: "PowerShell execution telemetry exposes the command/script content used by many PowerShell detections."
+      evidence: "https://attack.mitre.org/detectionstrategies/DET0455/"
+    - id: sysmon
+      role: supporting
+      why: "Process Creation can show powershell.exe invocation, parent process and command-line context."
+      evidence: "https://attack.mitre.org/detectionstrategies/DET0455/"
+
+- id: T1110
+  name: Brute Force
+  tactic: Credential Access
+  sources:
+    - id: windows_security
+      role: primary
+      why: "Authentication-failure telemetry supports correlation of repeated failed logons and suspicious successful logons."
+      evidence: "https://attack.mitre.org/detectionstrategies/DET0463/"
+
+- id: T1021.001
+  name: Remote Desktop Protocol
+  tactic: Lateral Movement
+  sources:
+    - id: windows_security
+      role: primary
+      why: "Security logon events provide RDP session evidence used together with session metadata."
+      evidence: "https://attack.mitre.org/detectionstrategies/DET0327/"
+    - id: sysmon
+      role: supporting
+      why: "Process creation and network connection context can correlate activity following an RDP logon."
+      evidence: "https://attack.mitre.org/detectionstrategies/DET0327/"
+    - id: zeek_conn
+      role: supporting
+      why: "Network connection metadata provides additional source/destination context around remote access."
+      evidence: "https://attack.mitre.org/detectionstrategies/DET0327/"
+
+- id: T1046
+  name: Network Service Scanning
+  tactic: Discovery
+  sources:
+    - id: sysmon
+      role: primary
+      why: "Process creation plus network connection telemetry can reveal scanning tools and rapid destination probing."
+      evidence: "https://attack.mitre.org/detectionstrategies/DET0376/"
+    - id: zeek_conn
+      role: primary
+      why: "Connection-flow metadata provides network-wide visibility into repeated probes across hosts/ports."
+      evidence: "https://attack.mitre.org/detectionstrategies/DET0376/"
+
+- id: T1105
+  name: Ingress Tool Transfer
+  tactic: Command and Control
+  sources:
+    - id: sysmon
+      role: primary
+      why: "Process, network connection and file-creation telemetry can be correlated to identify downloaded tools."
+      evidence: "https://attack.mitre.org/detectionstrategies/DET0060/"
+    - id: zeek_conn
+      role: supporting
+      why: "Network connection metadata adds destination and traffic context around possible transfers."
+      evidence: "https://attack.mitre.org/detectionstrategies/DET0060/"
+
+- id: T1071.004
+  name: DNS
+  tactic: Command and Control
+  sources:
+    - id: zeek_dns
+      role: primary
+      why: "DNS request telemetry is the most direct source in this MVP for spotting anomalous DNS-based C2 patterns."
+      evidence: "https://attack.mitre.org/detectionstrategies/DET0400/"
+    - id: zeek_conn
+      role: supporting
+      why: "Connection metadata provides surrounding network context but does not expose DNS fields itself."
+      evidence: "https://attack.mitre.org/detectionstrategies/DET0400/"

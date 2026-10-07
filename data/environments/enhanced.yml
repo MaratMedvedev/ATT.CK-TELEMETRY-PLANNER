@@ -1,0 +1,8 @@
+id: enhanced
+name: Enhanced
+enabled_sources:
+  - windows_security
+  - sysmon
+  - powershell_scriptblock
+  - zeek_conn
+description: "Endpoint + network flow visibility"

@@ -1,0 +1,5 @@
+id: minimal
+name: Minimal
+enabled_sources:
+  - windows_security
+description: "Authentication-focused baseline"

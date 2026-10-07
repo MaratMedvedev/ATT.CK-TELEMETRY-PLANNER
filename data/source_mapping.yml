@@ -1,0 +1,13 @@
+# Map ATT&CK analytic log-source names to the planner's normalized source IDs.
+# Unmapped names are reported but are not inserted into data/techniques.yml by --apply.
+log_source_to_source_id:
+  WinEventLog:Security: windows_security
+  wineventlog:security: windows_security
+  WinEventLog:Sysmon: sysmon
+  sysmon: sysmon
+  WinEventLog:PowerShell: powershell_scriptblock
+  wineventlog:powershell: powershell_scriptblock
+  zeek:conn: zeek_conn
+  zeek:conn.log: zeek_conn
+  zeek:dns: zeek_dns
+  zeek:dns.log: zeek_dns

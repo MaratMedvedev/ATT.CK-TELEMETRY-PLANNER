@@ -1,0 +1,57 @@
+{
+  "type": "bundle",
+  "id": "bundle--demo",
+  "objects": [
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--1",
+      "name": "PowerShell",
+      "kill_chain_phases": [{"kill_chain_name": "mitre-attack", "phase_name": "execution"}],
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1059.001"}],
+      "x_mitre_domains": ["enterprise-attack"],
+      "x_mitre_deprecated": false,
+      "revoked": false
+    },
+    {
+      "type": "x-mitre-detection-strategy",
+      "id": "x-mitre-detection-strategy--1",
+      "name": "Abuse of PowerShell",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "DET0455"}],
+      "x_mitre_domains": ["enterprise-attack"],
+      "x_mitre_analytic_refs": ["x-mitre-analytic--1"]
+    },
+    {
+      "type": "x-mitre-analytic",
+      "id": "x-mitre-analytic--1",
+      "name": "PowerShell analytic",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "AN1252"}],
+      "x_mitre_domains": ["enterprise-attack"],
+      "x_mitre_platforms": ["Windows"],
+      "x_mitre_log_source_references": [
+        {
+          "x_mitre_data_component_ref": "x-mitre-data-component--1",
+          "name": "WinEventLog:PowerShell",
+          "channel": "EventCode=4104"
+        }
+      ]
+    },
+    {
+      "type": "x-mitre-data-component",
+      "id": "x-mitre-data-component--1",
+      "name": "Command Execution",
+      "x_mitre_domains": ["enterprise-attack"],
+      "x_mitre_log_sources": [
+        {"name": "WinEventLog:PowerShell", "channel": "EventCode=4104"}
+      ]
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--1",
+      "relationship_type": "detects",
+      "source_ref": "x-mitre-detection-strategy--1",
+      "target_ref": "attack-pattern--1",
+      "x_mitre_deprecated": false,
+      "revoked": false
+    }
+  ]
+}

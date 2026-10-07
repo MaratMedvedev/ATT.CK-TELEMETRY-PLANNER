@@ -1,0 +1,6 @@
+id: standard
+name: Standard
+enabled_sources:
+  - windows_security
+  - sysmon
+description: "Endpoint visibility baseline"
